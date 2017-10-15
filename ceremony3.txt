@@ -1,0 +1,1227 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Agent(s)*.
+2[0:Inp] ||  -> Honest(s)*.
+3[0:Inp] ||  -> Agent(up)*.
+4[0:Inp] ||  -> Honest(up)*.
+5[0:Inp] ||  -> Agent(uc)*.
+6[0:Inp] ||  -> Honest(uc)*.
+7[0:Inp] ||  -> Attacker(da3)*.
+8[0:Inp] ||  -> DA(da3)*.
+9[0:Inp] ||  -> Attacker(da1)*.
+10[0:Inp] ||  -> DA(da1)*.
+11[0:Inp] ||  -> Attacker(da2)*.
+12[0:Inp] ||  -> DA(da2)*.
+13[0:Inp] ||  -> Attacker(dy)*.
+14[0:Inp] ||  -> DY(dy)*.
+15[0:Inp] ||  -> Key(keys)*.
+16[0:Inp] ||  -> Knows(uc,emailserverurl)*.
+17[0:Inp] ||  -> Knows(s,emailloginpage)*.
+18[0:Inp] ||  -> Knows(s,2stepverification)*.
+19[0:Inp] ||  -> Knows(s,codemessage)*.
+20[0:Inp] ||  -> Knows(uc,authenticationcode)*.
+21[0:Inp] ||  -> Knows(s,usersemailpage)*.
+22[0:Inp] || Knows(da1,emailserverurl)* -> .
+23[0:Inp] || Knows(da2,emailserverurl)* -> .
+24[0:Inp] || Knows(da2,emailloginpage)* -> .
+25[0:Inp] || Knows(da1,emailloginpage)* -> .
+26[0:Inp] || Knows(da2,2stepverification)* -> .
+27[0:Inp] || Knows(da1,2stepverification)* -> .
+28[0:Inp] || Knows(da3,codemessage)* -> .
+29[0:Inp] || Knows(da1,codemessage)* -> .
+30[0:Inp] || Knows(da1,authenticationcode)* -> .
+31[0:Inp] || Knows(da2,authenticationcode)* -> .
+32[0:Inp] || Knows(da2,usersemailpage)* -> .
+33[0:Inp] || Knows(da1,usersemailpage)* -> .
+34[0:Inp] || Attacker(U) -> Agent(U)*.
+35[0:Inp] ||  -> KnowsEncr(uc,encr(emailserverurl,keys))*.
+36[0:Inp] ||  -> KnowsEncr(s,encr(emailloginpage,keys))*.
+37[0:Inp] ||  -> KnowsPair(uc,pair(email,password))*.
+38[0:Inp] ||  -> KnowsEncr(s,encr(2stepverification,keys))*.
+39[0:Inp] ||  -> KnowsEncr(uc,encr(authenticationcode,keys))*.
+40[0:Inp] ||  -> KnowsEncr(s,encr(usersemailpage,keys))*.
+41[0:Inp] || KnowsEncr(dy,encr(emailserverurl,keys))* -> .
+42[0:Inp] || KnowsEncr(dy,encr(emailloginpage,keys))* -> .
+43[0:Inp] || KnowsPair(da1,pair(email,password))* -> .
+44[0:Inp] || KnowsPair(da2,pair(email,password))* -> .
+45[0:Inp] || KnowsPair(dy,pair(email,password))* -> .
+46[0:Inp] || KnowsEncr(dy,encr(2stepverification,keys))* -> .
+47[0:Inp] || KnowsEncr(dy,encr(authenticationcode,keys))* -> .
+48[0:Inp] || KnowsEncr(dy,encr(usersemailpage,keys))* -> .
+49[0:Inp] ||  -> L3_E(sent(uc,s,emailserverurl),da1)*.
+50[0:Inp] ||  -> KnowsEncr(uc,encr(pair(email,password),keys))*.
+51[0:Inp] || KnowsEncr(dy,encr(pair(email,password),keys))* -> .
+52[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(Y,V).
+53[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(Y,U).
+54[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(W,U).
+55[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(Y,V).
+56[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(Y,U).
+57[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(W,U).
+58[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(Y,V).
+59[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(Y,U).
+60[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(W,U).
+61[0:Inp] || SkP0(U,V,W,X,Y)* -> L3_Sender(X,W,V).
+62[0:Inp] || SkP0(U,V,W,X,Y)* -> L3_Sender(X,W,U).
+63[0:Inp] || SkP1(U,V,W,X,Y)* -> L2_Sender(X,W,V).
+64[0:Inp] || SkP1(U,V,W,X,Y)* -> L2_Sender(X,W,U).
+65[0:Inp] || SkP2(U,V,W,X,Y)* -> L1_Sender(X,W,V).
+66[0:Inp] || SkP2(U,V,W,X,Y)* -> L1_Sender(X,W,U).
+67[0:Inp] || KnowsPair(U,pair(V,W))* Agent(U) -> Knows(U,V).
+68[0:Inp] || KnowsPair(U,pair(V,W))* Agent(U) -> Knows(U,W).
+69[0:Inp] || L3_E(sent(uc,s,emailserverurl),da1) -> L2_E(sent(uc,s,emailserverurl),da2)*.
+70[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_E(sent(uc,s,emailserverurl),dy)*.
+71[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_B(sent(uc,s,emailserverurl),dy)*.
+72[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_S(sent(uc,s,emailserverurl),dy)*.
+73[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_I(sent(uc,s,emailserverurl),dy)*.
+74[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_C(sent(uc,s,emailserverurl),dy)*.
+75[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_O(sent(uc,s,emailserverurl),dy)*.
+76[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_F(sent(uc,s,emailserverurl),dy)*.
+77[0:Inp] || L2_E(sent(s,uc,emailloginpage),da2)* -> L3_E(sent(s,uc,emailloginpage),da1).
+78[0:Inp] || L2_E(sent(s,uc,2stepverification),da2)* -> L3_E(sent(s,uc,2stepverification),da1).
+79[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_E(sent(s,up,codemessage),da3)*.
+80[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_B(sent(s,up,codemessage),da3)*.
+81[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_S(sent(s,up,codemessage),da3)*.
+82[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_I(sent(s,up,codemessage),da3)*.
+83[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_C(sent(s,up,codemessage),da3)*.
+84[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_O(sent(s,up,codemessage),da3)*.
+85[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_F(sent(s,up,codemessage),da3)*.
+86[0:Inp] || L3_E(sent(s,up,codemessage),da1)* -> L3_E(sent(uc,s,authenticationcode),da1).
+87[0:Inp] || L3_E(sent(uc,s,authenticationcode),da1) -> L2_E(sent(uc,s,authenticationcode),da2)*.
+88[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_E(sent(uc,s,authenticationcode),dy)*.
+89[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_B(sent(uc,s,authenticationcode),dy)*.
+90[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_S(sent(uc,s,authenticationcode),dy)*.
+91[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_I(sent(uc,s,authenticationcode),dy)*.
+92[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_C(sent(uc,s,authenticationcode),dy)*.
+93[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_O(sent(uc,s,authenticationcode),dy)*.
+94[0:Inp] || L2_E(sent(uc,s,authenticationcode),da2) -> L1_F(sent(uc,s,authenticationcode),dy)*.
+95[0:Inp] || L2_E(sent(s,uc,usersemailpage),da2)* -> L3_E(sent(s,uc,usersemailpage),da1).
+96[0:Inp] || Knows(U,V) SkP0(V,W,U,X,Y)* -> Knows(U,W).
+97[0:Inp] || Knows(U,V) SkP1(V,W,U,X,Y)* -> Knows(U,W).
+98[0:Inp] || Knows(U,V) SkP2(V,W,U,X,Y)* -> Knows(U,W).
+99[0:Inp] || L3_E(sent(s,uc,emailloginpage),da1) -> L3_E(sent(uc,s,pair(email,password)),da1)*.
+100[0:Inp] || Knows(U,V) Knows(U,W) Agent(U) -> KnowsPair(U,pair(V,W))*.
+101[0:Inp] || Honest(U) Agent(U) Knows(V,W)* Attacker(V) -> Knows(U,W)*.
+102[0:Inp] || Honest(U) Agent(U) Knows(V,W)* Attacker(V) -> Knows(U,W)*.
+103[0:Inp] || Honest(U) Agent(U) Knows(V,W)* Attacker(V) -> Knows(U,W)*.
+104[0:Inp] || Knows(U,V)* Attacker(U) Agent(W) Honest(W) -> Knows(W,V)*.
+105[0:Inp] || Knows(U,V)* Attacker(U) Agent(W) Honest(W) -> Knows(W,V)*.
+106[0:Inp] || Knows(U,V)* Attacker(U) Agent(W) Honest(W) -> Knows(W,V)*.
+107[0:Inp] || Honest(U) Agent(U) Knows(V,W) Attacker(V) -> L3_Sender(V,U,W)*.
+108[0:Inp] || Honest(U) Agent(U) Knows(V,W) Attacker(V) -> L2_Sender(V,U,W)*.
+109[0:Inp] || Honest(U) Agent(U) Knows(V,W) Attacker(V) -> L1_Sender(V,U,W)*.
+110[0:Inp] || Knows(U,V) Attacker(U) Agent(W) Honest(W) -> L3_Sender(U,W,V)*.
+111[0:Inp] || Knows(U,V) Attacker(U) Agent(W) Honest(W) -> L2_Sender(U,W,V)*.
+112[0:Inp] || Knows(U,V) Attacker(U) Agent(W) Honest(W) -> L1_Sender(U,W,V)*.
+113[0:Inp] || L3_E(sent(uc,s,pair(email,password)),da1) -> L2_E(sent(uc,s,pair(email,password)),da2)*.
+114[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_E(sent(uc,s,pair(email,password)),dy)*.
+115[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_B(sent(uc,s,pair(email,password)),dy)*.
+116[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_S(sent(uc,s,pair(email,password)),dy)*.
+117[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_I(sent(uc,s,pair(email,password)),dy)*.
+118[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_C(sent(uc,s,pair(email,password)),dy)*.
+119[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_O(sent(uc,s,pair(email,password)),dy)*.
+120[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_F(sent(uc,s,pair(email,password)),dy)*.
+121[0:Inp] || Knows(U,V) Knows(U,W) Agent(U) Key(W) -> KnowsEncr(U,encr(V,W))*.
+122[0:Inp] || KnowsEncr(U,encr(V,W))* Knows(U,W) Agent(U) Key(W) -> Knows(U,V).
+123[0:Inp] || Knows(U,V) Attacker(U) Agent(W) Honest(W) -> L3_I(sent(U,W,V),U)*.
+124[0:Inp] || Knows(U,V) Attacker(U) Agent(W) Honest(W) -> L2_I(sent(U,W,V),U)*.
+125[0:Inp] || Knows(U,V) Attacker(U) Agent(W) Honest(W) -> L1_I(sent(U,W,V),U)*.
+126[0:Inp] || KnowsPair(U,pair(V,W))* Attacker(U) Honest(X) Agent(X) -> KnowsPair(X,pair(V,W))*.
+127[0:Inp] || KnowsPair(U,pair(V,W))* Attacker(U) Honest(X) Agent(X) -> KnowsPair(X,pair(V,W))*.
+128[0:Inp] || KnowsPair(U,pair(V,W))* Attacker(U) Honest(X) Agent(X) -> KnowsPair(X,pair(V,W))*.
+129[0:Inp] || Honest(U) Agent(U) KnowsPair(V,pair(W,X))* Attacker(V) -> KnowsPair(U,pair(W,X))*.
+130[0:Inp] || Honest(U) Agent(U) KnowsPair(V,pair(W,X))* Attacker(V) -> KnowsPair(U,pair(W,X))*.
+131[0:Inp] || Honest(U) Agent(U) KnowsPair(V,pair(W,X))* Attacker(V) -> KnowsPair(U,pair(W,X))*.
+132[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Honest(X) Agent(X) -> L1_Sender(U,X,pair(V,W))*.
+133[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Honest(X) Agent(X) -> L2_Sender(U,X,pair(V,W))*.
+134[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Honest(X) Agent(X) -> L3_Sender(U,X,pair(V,W))*.
+135[0:Inp] || Honest(U) Agent(U) KnowsPair(V,pair(W,X)) Attacker(V) -> L1_Sender(V,U,pair(W,X))*.
+136[0:Inp] || Honest(U) Agent(U) KnowsPair(V,pair(W,X)) Attacker(V) -> L2_Sender(V,U,pair(W,X))*.
+137[0:Inp] || Honest(U) Agent(U) KnowsPair(V,pair(W,X)) Attacker(V) -> L3_Sender(V,U,pair(W,X))*.
+138[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Honest(X) Agent(X) -> L1_I(sent(U,X,pair(V,W)),U)*.
+139[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Honest(X) Agent(X) -> L2_I(sent(U,X,pair(V,W)),U)*.
+140[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Honest(X) Agent(X) -> L3_I(sent(U,X,pair(V,W)),U)*.
+141[0:Inp] || KnowsEncr(U,encr(pair(V,W),X))* Agent(U) Knows(U,X) Key(X) -> KnowsPair(U,pair(V,W)).
+142[0:Inp] || KnowsPair(U,pair(V,W)) Agent(U) Knows(U,X) Key(X) -> KnowsEncr(U,encr(pair(V,W),X))*.
+143[0:Inp] || Knows(U,V)* Knows(U,W)* Attacker(U) Agent(X) Honest(X) Key(W) -> KnowsEncr(X,encr(V,W))*.
+144[0:Inp] || Agent(U) Honest(U) Honest(V) Agent(V) Knows(W,X) Attacker(W) -> L1_S(sent(U,V,X),W)*.
+145[0:Inp] || Agent(U) Honest(U) Honest(V) Agent(V) Knows(W,X) Attacker(W) -> L2_S(sent(U,V,X),W)*.
+146[0:Inp] || Agent(U) Honest(U) Honest(V) Agent(V) Knows(W,X) Attacker(W) -> L3_S(sent(U,V,X),W)*.
+147[0:Inp] || Knows(U,V) Knows(U,W) Attacker(U) Agent(X) Honest(X) Key(W) -> L1_Sender(U,X,encr(V,W))*.
+148[0:Inp] || Knows(U,V) Knows(U,W) Attacker(U) Agent(X) Honest(X) Key(W) -> L1_I(sent(U,X,encr(V,W)),U)*.
+149[0:Inp] || Agent(U) Honest(U) L1_F(sent(U,V,W),X)* Honest(V) Agent(V) Attacker(X) Function(hash(W)) -> Knows(X,W).
+150[0:Inp] || KnowsPair(U,pair(V,W))* Attacker(U) Knows(U,X)* Honest(Y) Agent(Y) Key(X) -> KnowsEncr(Y,encr(pair(V,W),X))*.
+151[0:Inp] || Agent(U) Honest(U) Honest(V) Agent(V) KnowsPair(W,pair(X,Y)) Attacker(W) -> L1_S(sent(U,V,pair(X,Y)),W)*.
+152[0:Inp] || Agent(U) Honest(U) Honest(V) Agent(V) KnowsPair(W,pair(X,Y)) Attacker(W) -> L2_S(sent(U,V,pair(X,Y)),W)*.
+153[0:Inp] || Agent(U) Honest(U) Honest(V) Agent(V) KnowsPair(W,pair(X,Y)) Attacker(W) -> L3_S(sent(U,V,pair(X,Y)),W)*.
+154[0:Inp] || Knows(U,V) L1_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(X,V).
+155[0:Inp] || Knows(U,V) L2_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(X,V).
+156[0:Inp] || Knows(U,V) L3_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(X,V).
+157[0:Inp] || Knows(U,V) L1_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(X,V).
+158[0:Inp] || Knows(U,V) L1_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(W,V).
+159[0:Inp] || Knows(U,V) L2_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(X,V).
+160[0:Inp] || Knows(U,V) L2_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(W,V).
+161[0:Inp] || Knows(U,V) L3_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(X,V).
+162[0:Inp] || Knows(U,V) L3_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> Knows(W,V).
+163[0:Inp] || Agent(U) Honest(U) L1_F(sent(U,V,W),X)* Honest(V) Agent(V) Attacker(X) Function(hash(W)) -> L1_Sender(U,V,W).
+164[0:Inp] || Agent(U) Honest(U) L1_F(sent(U,V,W),X)* Honest(V) Agent(V) Attacker(X) Function(hash(W)) -> Knows(X,hash(W)).
+165[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Knows(U,X) Honest(Y) Agent(Y) Key(X) -> L1_Sender(U,Y,encr(pair(V,W),X))*.
+166[0:Inp] || Knows(U,V) L1_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L1_Sender(U,W,V).
+167[0:Inp] || Knows(U,V) L1_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L1_WasBlocked(W,V,X).
+168[0:Inp] || Knows(U,V) L2_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L2_Sender(U,W,V).
+169[0:Inp] || Knows(U,V) L2_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L2_WasBlocked(W,V,X).
+170[0:Inp] || Knows(U,V) L3_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L3_Sender(U,W,V).
+171[0:Inp] || Knows(U,V) L3_B(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L3_WasBlocked(W,V,X).
+172[0:Inp] || Knows(U,V) L1_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L1_Sender(U,W,V).
+173[0:Inp] || Knows(U,V) L2_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L2_Sender(U,W,V).
+174[0:Inp] || Knows(U,V) L3_E(sent(U,W,V),X)* Honest(U) Agent(U) Agent(W) Honest(W) Attacker(X) -> L3_Sender(U,W,V).
+175[0:Inp] || KnowsPair(U,pair(V,W)) Attacker(U) Knows(U,X) Honest(Y) Agent(Y) Key(X) -> L1_I(sent(U,Y,encr(pair(V,W),X)),U)*.
+176[0:Inp] || Agent(U) Honest(U) Knows(U,V) L2_F(sent(U,W,V),X)* Honest(W) Agent(W) Attacker(X) Function(hash(V)) -> Knows(X,V).
+177[0:Inp] || Agent(U) Honest(U) Knows(U,V) L3_F(sent(U,W,V),X)* Honest(W) Agent(W) Attacker(X) Function(hash(V)) -> Knows(X,V).
+178[0:Inp] || Agent(U) Honest(U) Knows(U,V) L2_F(sent(U,W,V),X)* Honest(W) Agent(W) Attacker(X) Function(hash(V)) -> L2_Sender(U,W,V).
+179[0:Inp] || Agent(U) Honest(U) Knows(U,V) L2_F(sent(U,W,V),X)* Honest(W) Agent(W) Attacker(X) Function(hash(V)) -> Knows(X,hash(V)).
+180[0:Inp] || Agent(U) Honest(U) Knows(U,V) L3_F(sent(U,W,V),X)* Honest(W) Agent(W) Attacker(X) Function(hash(V)) -> Knows(X,hash(V)).
+181[0:Inp] || Agent(U) Honest(U) Knows(U,V) L3_F(sent(U,W,V),X)* Honest(W) Agent(W) Attacker(X) Function(hash(V)) -> L3_Sender(U,W,V).
+182[0:Inp] || KnowsPair(U,pair(V,W)) L1_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(Y,pair(V,W)).
+183[0:Inp] || KnowsPair(U,pair(V,W)) L2_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(Y,pair(V,W)).
+184[0:Inp] || KnowsPair(U,pair(V,W)) L3_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(Y,pair(V,W)).
+185[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(Y,pair(V,W)).
+186[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(X,pair(V,W)).
+187[0:Inp] || KnowsPair(U,pair(V,W)) L2_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(Y,pair(V,W)).
+188[0:Inp] || KnowsPair(U,pair(V,W)) L2_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(X,pair(V,W)).
+189[0:Inp] || KnowsPair(U,pair(V,W)) L3_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(Y,pair(V,W)).
+190[0:Inp] || KnowsPair(U,pair(V,W)) L3_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> KnowsPair(X,pair(V,W)).
+191[0:Inp] || KnowsPair(U,pair(V,W)) L1_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L1_Sender(U,X,pair(V,W)).
+192[0:Inp] || KnowsPair(U,pair(V,W)) L1_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L1_WasBlocked(X,pair(V,W),Y).
+193[0:Inp] || KnowsPair(U,pair(V,W)) L2_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L2_Sender(U,X,pair(V,W)).
+194[0:Inp] || KnowsPair(U,pair(V,W)) L2_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L2_WasBlocked(X,pair(V,W),Y).
+195[0:Inp] || KnowsPair(U,pair(V,W)) L3_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L3_Sender(U,X,pair(V,W)).
+196[0:Inp] || KnowsPair(U,pair(V,W)) L3_B(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L3_WasBlocked(X,pair(V,W),Y).
+197[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L1_Sender(U,X,pair(V,W)).
+198[0:Inp] || KnowsPair(U,pair(V,W)) L2_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L2_Sender(U,X,pair(V,W)).
+199[0:Inp] || KnowsPair(U,pair(V,W)) L3_E(sent(U,X,pair(V,W)),Y)* Agent(U) Honest(U) Honest(X) Agent(X) Attacker(Y) -> L3_Sender(U,X,pair(V,W)).
+200[0:Inp] || Knows(U,V) L1_E(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> KnowsEncr(W,encr(V,X)).
+201[0:Inp] || Knows(U,V) L1_B(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> KnowsEncr(Y,encr(V,X)).
+202[0:Inp] || Knows(U,V) L1_E(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> KnowsEncr(Y,encr(V,X)).
+203[0:Inp] || Knows(U,V) L1_E(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> KnowsEncr(W,encr(V,X)).
+204[0:Inp] || Knows(U,V) L1_E(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> L1_Sender(Y,W,encr(V,X)).
+205[0:Inp] || Knows(U,V) L1_B(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> L1_Sender(U,W,encr(V,X)).
+206[0:Inp] || Knows(U,V) L1_B(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> L1_WasBlocked(W,encr(V,X),Y).
+207[0:Inp] || Knows(U,V) L1_E(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> L1_Sender(U,W,encr(V,X)).
+208[0:Inp] || Knows(U,V) L1_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> Knows(Y,V).
+209[0:Inp] || Knows(U,V) L2_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> Knows(Y,V).
+210[0:Inp] || Knows(U,V) L3_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> Knows(Y,V).
+211[0:Inp] || L1_O(sent(U,V,W),X) Knows(U,W) L1_O(sent(U,V,Y),X) Knows(U,Y) Agent(V) Honest(V) Honest(U) Agent(U) Attacker(X) -> SkP2(W,Y,V,U,X)*.
+212[0:Inp] || L2_O(sent(U,V,W),X) Knows(U,W) L2_O(sent(U,V,Y),X) Knows(U,Y) Agent(V) Honest(V) Honest(U) Agent(U) Attacker(X) -> SkP1(W,Y,V,U,X)*.
+213[0:Inp] || L3_O(sent(U,V,W),X) Knows(U,W) L3_O(sent(U,V,Y),X) Knows(U,Y) Agent(V) Honest(V) Honest(U) Agent(U) Attacker(X) -> SkP0(W,Y,V,U,X)*.
+214[0:Inp] || Knows(U,V) L1_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> L1_Sender(U,W,V).
+215[0:Inp] || Knows(U,V) L2_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> L2_Sender(U,W,V).
+216[0:Inp] || Knows(U,V) L3_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> L3_Sender(U,W,V).
+217[0:Inp] || Knows(U,V) L1_E(sent(U,W,encr(V,X)),Y) Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Attacker(Y) Key(X) -> L1_S(sent(U,W,encr(V,X)),Y)*.
+218[0:Inp] || Knows(U,V) L1_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> KnowsEncr(W,encr(V,X)).
+219[0:Inp] || Knows(U,V) L2_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> KnowsEncr(W,encr(V,X)).
+220[0:Inp] || Knows(U,V) L3_C(sent(U,W,encr(V,X)),Y)* Knows(U,X) Honest(U) Agent(U) Agent(W) Honest(W) Knows(Y,X) Attacker(Y) Key(X) -> KnowsEncr(W,encr(V,X)).
+221[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> KnowsEncr(X,encr(pair(V,W),Y)).
+222[0:Inp] || KnowsPair(U,pair(V,W)) L1_B(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> KnowsEncr(Z,encr(pair(V,W),Y)).
+223[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> KnowsEncr(Z,encr(pair(V,W),Y)).
+224[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> KnowsEncr(X,encr(pair(V,W),Y)).
+225[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> L1_Sender(Z,X,encr(pair(V,W),Y)).
+226[0:Inp] || KnowsPair(U,pair(V,W)) L1_B(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> L1_Sender(U,X,encr(pair(V,W),Y)).
+227[0:Inp] || KnowsPair(U,pair(V,W)) L1_B(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> L1_WasBlocked(X,encr(pair(V,W),Y),Z).
+228[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> L1_Sender(U,X,encr(pair(V,W),Y)).
+229[0:Inp] || KnowsPair(U,pair(V,W)) L1_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> KnowsPair(Z,pair(V,W)).
+230[0:Inp] || KnowsPair(U,pair(V,W)) L2_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> KnowsPair(Z,pair(V,W)).
+231[0:Inp] || KnowsPair(U,pair(V,W)) L3_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> KnowsPair(Z,pair(V,W)).
+232[0:Inp] || KnowsPair(U,pair(V,W)) L1_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> L1_Sender(U,X,pair(V,W)).
+233[0:Inp] || KnowsPair(U,pair(V,W)) L2_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> L2_Sender(U,X,pair(V,W)).
+234[0:Inp] || KnowsPair(U,pair(V,W)) L3_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> L3_Sender(U,X,pair(V,W)).
+235[0:Inp] || KnowsPair(U,pair(V,W)) L1_E(sent(U,X,encr(pair(V,W),Y)),Z) Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Key(Y) -> L1_S(sent(U,X,encr(pair(V,W),Y)),Z)*.
+236[0:Inp] || KnowsPair(U,pair(V,W)) L1_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> KnowsEncr(X,encr(pair(V,W),Y)).
+237[0:Inp] || KnowsPair(U,pair(V,W)) L2_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> KnowsEncr(X,encr(pair(V,W),Y)).
+238[0:Inp] || KnowsPair(U,pair(V,W)) L3_C(sent(U,X,encr(pair(V,W),Y)),Z)* Agent(U) Honest(U) Knows(U,Y) Honest(X) Agent(X) Attacker(Z) Knows(Z,Y) Key(Y) -> KnowsEncr(X,encr(pair(V,W),Y)).
+239[0:Inp] || L1_E(sent(s,uc,usersemailpage),dy) L1_B(sent(s,uc,usersemailpage),dy) L1_S(sent(s,uc,usersemailpage),dy) L1_I(sent(s,uc,usersemailpage),dy) L1_C(sent(s,uc,usersemailpage),dy) L1_O(sent(s,uc,usersemailpage),dy) L1_F(sent(s,uc,usersemailpage),dy)* -> L2_E(sent(s,uc,usersemailpage),da2).
+240[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy) -> L1_F(sent(s,uc,usersemailpage),dy)*.
+241[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy)* -> L1_O(sent(s,uc,usersemailpage),dy).
+242[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy)* -> L1_C(sent(s,uc,usersemailpage),dy).
+243[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy)* -> L1_I(sent(s,uc,usersemailpage),dy).
+244[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy)* -> L1_S(sent(s,uc,usersemailpage),dy).
+245[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy)* -> L1_B(sent(s,uc,usersemailpage),dy).
+246[0:Inp] || L1_E(sent(uc,s,authenticationcode),dy) L1_B(sent(uc,s,authenticationcode),dy) L1_S(sent(uc,s,authenticationcode),dy) L1_I(sent(uc,s,authenticationcode),dy) L1_C(sent(uc,s,authenticationcode),dy) L1_O(sent(uc,s,authenticationcode),dy) L1_F(sent(uc,s,authenticationcode),dy)* -> L1_E(sent(s,uc,usersemailpage),dy).
+247[0:Inp] || L2_E(sent(s,up,codemessage),da3) L2_B(sent(s,up,codemessage),da3) L2_S(sent(s,up,codemessage),da3) L2_I(sent(s,up,codemessage),da3) L2_C(sent(s,up,codemessage),da3) L2_O(sent(s,up,codemessage),da3) L2_F(sent(s,up,codemessage),da3)* -> L3_E(sent(s,up,codemessage),da1).
+248[0:Inp] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy) L1_S(sent(s,uc,2stepverification),dy) L1_I(sent(s,uc,2stepverification),dy) L1_C(sent(s,uc,2stepverification),dy) L1_O(sent(s,uc,2stepverification),dy) L1_F(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+249[0:Inp] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy) L1_S(sent(s,uc,emailloginpage),dy) L1_I(sent(s,uc,emailloginpage),dy) L1_C(sent(s,uc,emailloginpage),dy) L1_O(sent(s,uc,emailloginpage),dy) L1_F(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+250[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy) -> L1_F(sent(s,uc,emailloginpage),dy)*.
+251[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_O(sent(s,uc,emailloginpage),dy).
+252[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_C(sent(s,uc,emailloginpage),dy).
+253[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_I(sent(s,uc,emailloginpage),dy).
+254[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_S(sent(s,uc,emailloginpage),dy).
+255[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_B(sent(s,uc,emailloginpage),dy).
+256[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_E(sent(s,uc,emailloginpage),dy).
+257[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_F(sent(s,uc,2stepverification),dy).
+258[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_O(sent(s,uc,2stepverification),dy).
+259[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_C(sent(s,uc,2stepverification),dy).
+260[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_I(sent(s,uc,2stepverification),dy).
+261[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_S(sent(s,uc,2stepverification),dy).
+262[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_B(sent(s,uc,2stepverification),dy).
+263[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_E(sent(s,uc,2stepverification),dy).
+ This is a first-order Horn problem without equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: Key, DY, DA, Attacker, Honest.
+ Axiom clauses: 242 Conjecture clauses: 21
+ Inferences: IEmS=1 ISoR=1 IORe=1 
+ Reductions: RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSST=1 RSSi=1 RFSub=1 RBSub=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, No Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: hash > pair > encr > sent > L3_Sender > L2_Sender > L1_Sender > L1_WasBlocked > L3_WasBlocked > L2_WasBlocked > L3_S > L3_I > SkP2 > SkP1 > SkP0 > L1_F > L1_O > L1_C > L1_I > L1_S > L1_B > L1_E > L2_F > L2_O > L2_C > L2_I > L2_S > L2_B > L2_E > L3_E > KnowsEncr > KnowsPair > Knows > Agent > Attacker > Honest > Key > Function > DY > DA > MA > L3_N > L3_B > L3_C > L3_O > L3_F > L2_N > da3 > da1 > da2 > dy > s > up > uc > emailserverurl > keys > emailloginpage > email > password > 2stepverification > codemessage > authenticationcode > usersemailpage
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+14[0:Inp] ||  -> DY(dy)*.
+12[0:Inp] ||  -> DA(da2)*.
+10[0:Inp] ||  -> DA(da1)*.
+8[0:Inp] ||  -> DA(da3)*.
+15[0:Inp] ||  -> Key(keys)*.
+13[0:Inp] ||  -> Attacker(dy)*.
+11[0:Inp] ||  -> Attacker(da2)*.
+9[0:Inp] ||  -> Attacker(da1)*.
+7[0:Inp] ||  -> Attacker(da3)*.
+6[0:Inp] ||  -> Honest(uc)*.
+4[0:Inp] ||  -> Honest(up)*.
+2[0:Inp] ||  -> Honest(s)*.
+5[0:Inp] ||  -> Agent(uc)*.
+3[0:Inp] ||  -> Agent(up)*.
+1[0:Inp] ||  -> Agent(s)*.
+21[0:Inp] ||  -> Knows(s,usersemailpage)*.
+20[0:Inp] ||  -> Knows(uc,authenticationcode)*.
+19[0:Inp] ||  -> Knows(s,codemessage)*.
+18[0:Inp] ||  -> Knows(s,2stepverification)*.
+17[0:Inp] ||  -> Knows(s,emailloginpage)*.
+16[0:Inp] ||  -> Knows(uc,emailserverurl)*.
+33[0:Inp] || Knows(da1,usersemailpage)* -> .
+32[0:Inp] || Knows(da2,usersemailpage)* -> .
+31[0:Inp] || Knows(da2,authenticationcode)* -> .
+30[0:Inp] || Knows(da1,authenticationcode)* -> .
+29[0:Inp] || Knows(da1,codemessage)* -> .
+28[0:Inp] || Knows(da3,codemessage)* -> .
+27[0:Inp] || Knows(da1,2stepverification)* -> .
+26[0:Inp] || Knows(da2,2stepverification)* -> .
+25[0:Inp] || Knows(da1,emailloginpage)* -> .
+24[0:Inp] || Knows(da2,emailloginpage)* -> .
+23[0:Inp] || Knows(da2,emailserverurl)* -> .
+22[0:Inp] || Knows(da1,emailserverurl)* -> .
+40[0:Inp] ||  -> KnowsEncr(s,encr(usersemailpage,keys))*.
+39[0:Inp] ||  -> KnowsEncr(uc,encr(authenticationcode,keys))*.
+38[0:Inp] ||  -> KnowsEncr(s,encr(2stepverification,keys))*.
+36[0:Inp] ||  -> KnowsEncr(s,encr(emailloginpage,keys))*.
+35[0:Inp] ||  -> KnowsEncr(uc,encr(emailserverurl,keys))*.
+37[0:Inp] ||  -> KnowsPair(uc,pair(email,password))*.
+34[0:Inp] Attacker(U) ||  -> Agent(U)*.
+333[0:MRR:84.0,331.0] ||  -> L2_O(sent(s,up,codemessage),da3)*.
+335[0:MRR:82.0,331.0] ||  -> L2_I(sent(s,up,codemessage),da3)*.
+336[0:MRR:81.0,331.0] ||  -> L2_S(sent(s,up,codemessage),da3)*.
+266[0:MRR:75.0,264.0] ||  -> L1_O(sent(uc,s,emailserverurl),dy)*.
+295[0:MRR:251.0,251.1,251.2,251.3,251.4,251.5,251.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_O(sent(s,uc,emailloginpage),dy)*.
+319[0:MRR:258.0,258.1,258.2,258.3,258.4,258.5,258.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_O(sent(s,uc,2stepverification),dy)*.
+344[0:MRR:93.0,342.0] ||  -> L1_O(sent(uc,s,authenticationcode),dy)*.
+363[0:MRR:351.0,351.1,351.2,351.3,351.4,351.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_O(sent(s,uc,usersemailpage),dy)*.
+268[0:MRR:73.0,264.0] ||  -> L1_I(sent(uc,s,emailserverurl),dy)*.
+269[0:MRR:72.0,264.0] ||  -> L1_S(sent(uc,s,emailserverurl),dy)*.
+299[0:MRR:253.0,253.1,253.2,253.3,253.4,253.5,253.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_I(sent(s,uc,emailloginpage),dy)*.
+301[0:MRR:254.0,254.1,254.2,254.3,254.4,254.5,254.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_S(sent(s,uc,emailloginpage),dy)*.
+323[0:MRR:260.0,260.1,260.2,260.3,260.4,260.5,260.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_I(sent(s,uc,2stepverification),dy)*.
+325[0:MRR:261.0,261.1,261.2,261.3,261.4,261.5,261.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_S(sent(s,uc,2stepverification),dy)*.
+346[0:MRR:91.0,342.0] ||  -> L1_I(sent(uc,s,authenticationcode),dy)*.
+347[0:MRR:90.0,342.0] ||  -> L1_S(sent(uc,s,authenticationcode),dy)*.
+360[0:MRR:354.0,354.1,354.2,354.3,354.4,354.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_S(sent(s,uc,usersemailpage),dy)*.
+361[0:MRR:353.0,353.1,353.2,353.3,353.4,353.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_I(sent(s,uc,usersemailpage),dy)*.
+332[0:MRR:85.0,331.0] ||  -> L2_F(sent(s,up,codemessage),da3)*.
+334[0:MRR:83.0,331.0] ||  -> L2_C(sent(s,up,codemessage),da3)*.
+337[0:MRR:80.0,331.0] ||  -> L2_B(sent(s,up,codemessage),da3)*.
+265[0:MRR:76.0,264.0] ||  -> L1_F(sent(uc,s,emailserverurl),dy)*.
+293[0:MRR:250.0,250.1,250.2,250.3,250.4,250.5,250.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_F(sent(s,uc,emailloginpage),dy)*.
+317[0:MRR:257.0,257.1,257.2,257.3,257.4,257.5,257.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_F(sent(s,uc,2stepverification),dy)*.
+343[0:MRR:94.0,342.0] ||  -> L1_F(sent(uc,s,authenticationcode),dy)*.
+364[0:MRR:350.0,350.1,350.2,350.3,350.4,350.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_F(sent(s,uc,usersemailpage),dy)*.
+267[0:MRR:74.0,264.0] ||  -> L1_C(sent(uc,s,emailserverurl),dy)*.
+297[0:MRR:252.0,252.1,252.2,252.3,252.4,252.5,252.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_C(sent(s,uc,emailloginpage),dy)*.
+321[0:MRR:259.0,259.1,259.2,259.3,259.4,259.5,259.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_C(sent(s,uc,2stepverification),dy)*.
+345[0:MRR:92.0,342.0] ||  -> L1_C(sent(uc,s,authenticationcode),dy)*.
+362[0:MRR:352.0,352.1,352.2,352.3,352.4,352.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_C(sent(s,uc,usersemailpage),dy)*.
+270[0:MRR:71.0,264.0] ||  -> L1_B(sent(uc,s,emailserverurl),dy)*.
+303[0:MRR:255.0,255.1,255.2,255.3,255.4,255.5,255.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_B(sent(s,uc,emailloginpage),dy)*.
+327[0:MRR:262.0,262.1,262.2,262.3,262.4,262.5,262.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_B(sent(s,uc,2stepverification),dy)*.
+348[0:MRR:89.0,342.0] ||  -> L1_B(sent(uc,s,authenticationcode),dy)*.
+359[0:MRR:355.0,355.1,355.2,355.3,355.4,355.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_B(sent(s,uc,usersemailpage),dy)*.
+49[0:Inp] ||  -> L3_E(sent(uc,s,emailserverurl),da1)*.
+264[0:MRR:69.0,49.0] ||  -> L2_E(sent(uc,s,emailserverurl),da2)*.
+306[0:MRR:304.0,305.0] ||  -> L2_E(sent(s,uc,emailloginpage),da2)*.
+307[0:MRR:77.0,306.0] ||  -> L3_E(sent(s,uc,emailloginpage),da1)*.
+330[0:MRR:328.0,329.0] ||  -> L2_E(sent(s,uc,2stepverification),da2)*.
+331[0:MRR:78.0,330.0] ||  -> L3_E(sent(s,uc,2stepverification),da1)*.
+338[0:MRR:79.0,331.0] ||  -> L2_E(sent(s,up,codemessage),da3)*.
+340[0:MRR:339.0,339.1,339.2,339.3,339.4,339.5,338.0,337.0,336.0,335.0,334.0,333.0] ||  -> L3_E(sent(s,up,codemessage),da1)*.
+341[0:MRR:86.0,340.0] ||  -> L3_E(sent(uc,s,authenticationcode),da1)*.
+342[0:MRR:87.0,341.0] ||  -> L2_E(sent(uc,s,authenticationcode),da2)*.
+365[0:MRR:358.0,358.1,358.2,358.3,358.4,358.5,359.0,360.0,361.0,362.0,363.0,364.0] ||  -> L2_E(sent(s,uc,usersemailpage),da2)*.
+366[0:MRR:95.0,365.0] ||  -> L3_E(sent(s,uc,usersemailpage),da1)*.
+271[0:MRR:70.0,264.0] ||  -> L1_E(sent(uc,s,emailserverurl),dy)*.
+305[0:MRR:256.0,256.1,256.2,256.3,256.4,256.5,256.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_E(sent(s,uc,emailloginpage),dy)*.
+329[0:MRR:263.0,263.1,263.2,263.3,263.4,263.5,263.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_E(sent(s,uc,2stepverification),dy)*.
+349[0:MRR:88.0,342.0] ||  -> L1_E(sent(uc,s,authenticationcode),dy)*.
+357[0:MRR:356.0,356.1,356.2,356.3,356.4,356.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_E(sent(s,uc,usersemailpage),dy)*.
+48[0:Inp] || KnowsEncr(dy,encr(usersemailpage,keys))* -> .
+47[0:Inp] || KnowsEncr(dy,encr(authenticationcode,keys))* -> .
+46[0:Inp] || KnowsEncr(dy,encr(2stepverification,keys))* -> .
+42[0:Inp] || KnowsEncr(dy,encr(emailloginpage,keys))* -> .
+41[0:Inp] || KnowsEncr(dy,encr(emailserverurl,keys))* -> .
+45[0:Inp] || KnowsPair(dy,pair(email,password))* -> .
+44[0:Inp] || KnowsPair(da2,pair(email,password))* -> .
+43[0:Inp] || KnowsPair(da1,pair(email,password))* -> .
+50[0:Inp] ||  -> KnowsEncr(uc,encr(pair(email,password),keys))*.
+367[0:Res:54.1,33.0] || SkP0(usersemailpage,U,da1,V,W)* -> .
+368[0:Res:57.1,33.0] || SkP1(usersemailpage,U,da1,V,W)* -> .
+369[0:Res:60.1,33.0] || SkP2(usersemailpage,U,da1,V,W)* -> .
+398[0:Res:54.1,32.0] || SkP0(usersemailpage,U,da2,V,W)* -> .
+399[0:Res:57.1,32.0] || SkP1(usersemailpage,U,da2,V,W)* -> .
+400[0:Res:60.1,32.0] || SkP2(usersemailpage,U,da2,V,W)* -> .
+429[0:Res:54.1,31.0] || SkP0(authenticationcode,U,da2,V,W)* -> .
+430[0:Res:57.1,31.0] || SkP1(authenticationcode,U,da2,V,W)* -> .
+431[0:Res:60.1,31.0] || SkP2(authenticationcode,U,da2,V,W)* -> .
+460[0:Res:54.1,30.0] || SkP0(authenticationcode,U,da1,V,W)* -> .
+461[0:Res:57.1,30.0] || SkP1(authenticationcode,U,da1,V,W)* -> .
+462[0:Res:60.1,30.0] || SkP2(authenticationcode,U,da1,V,W)* -> .
+491[0:Res:54.1,29.0] || SkP0(codemessage,U,da1,V,W)* -> .
+492[0:Res:57.1,29.0] || SkP1(codemessage,U,da1,V,W)* -> .
+493[0:Res:60.1,29.0] || SkP2(codemessage,U,da1,V,W)* -> .
+522[0:Res:54.1,28.0] || SkP0(codemessage,U,da3,V,W)* -> .
+523[0:Res:57.1,28.0] || SkP1(codemessage,U,da3,V,W)* -> .
+524[0:Res:60.1,28.0] || SkP2(codemessage,U,da3,V,W)* -> .
+553[0:Res:54.1,27.0] || SkP0(2stepverification,U,da1,V,W)* -> .
+554[0:Res:57.1,27.0] || SkP1(2stepverification,U,da1,V,W)* -> .
+555[0:Res:60.1,27.0] || SkP2(2stepverification,U,da1,V,W)* -> .
+584[0:Res:54.1,26.0] || SkP0(2stepverification,U,da2,V,W)* -> .
+585[0:Res:57.1,26.0] || SkP1(2stepverification,U,da2,V,W)* -> .
+586[0:Res:60.1,26.0] || SkP2(2stepverification,U,da2,V,W)* -> .
+370[0:Res:53.1,33.0] || SkP0(usersemailpage,U,V,W,da1)* -> .
+371[0:Res:56.1,33.0] || SkP1(usersemailpage,U,V,W,da1)* -> .
+372[0:Res:59.1,33.0] || SkP2(usersemailpage,U,V,W,da1)* -> .
+401[0:Res:53.1,32.0] || SkP0(usersemailpage,U,V,W,da2)* -> .
+402[0:Res:56.1,32.0] || SkP1(usersemailpage,U,V,W,da2)* -> .
+403[0:Res:59.1,32.0] || SkP2(usersemailpage,U,V,W,da2)* -> .
+432[0:Res:53.1,31.0] || SkP0(authenticationcode,U,V,W,da2)* -> .
+433[0:Res:56.1,31.0] || SkP1(authenticationcode,U,V,W,da2)* -> .
+434[0:Res:59.1,31.0] || SkP2(authenticationcode,U,V,W,da2)* -> .
+463[0:Res:53.1,30.0] || SkP0(authenticationcode,U,V,W,da1)* -> .
+464[0:Res:56.1,30.0] || SkP1(authenticationcode,U,V,W,da1)* -> .
+465[0:Res:59.1,30.0] || SkP2(authenticationcode,U,V,W,da1)* -> .
+494[0:Res:53.1,29.0] || SkP0(codemessage,U,V,W,da1)* -> .
+495[0:Res:56.1,29.0] || SkP1(codemessage,U,V,W,da1)* -> .
+496[0:Res:59.1,29.0] || SkP2(codemessage,U,V,W,da1)* -> .
+525[0:Res:53.1,28.0] || SkP0(codemessage,U,V,W,da3)* -> .
+526[0:Res:56.1,28.0] || SkP1(codemessage,U,V,W,da3)* -> .
+527[0:Res:59.1,28.0] || SkP2(codemessage,U,V,W,da3)* -> .
+556[0:Res:53.1,27.0] || SkP0(2stepverification,U,V,W,da1)* -> .
+557[0:Res:56.1,27.0] || SkP1(2stepverification,U,V,W,da1)* -> .
+558[0:Res:59.1,27.0] || SkP2(2stepverification,U,V,W,da1)* -> .
+587[0:Res:53.1,26.0] || SkP0(2stepverification,U,V,W,da2)* -> .
+588[0:Res:56.1,26.0] || SkP1(2stepverification,U,V,W,da2)* -> .
+589[0:Res:59.1,26.0] || SkP2(2stepverification,U,V,W,da2)* -> .
+376[0:Res:274.1,33.0] || SkP0(U,usersemailpage,da1,V,W)* -> .
+377[0:Res:273.1,33.0] || SkP1(U,usersemailpage,da1,V,W)* -> .
+378[0:Res:272.1,33.0] || SkP2(U,usersemailpage,da1,V,W)* -> .
+407[0:Res:274.1,32.0] || SkP0(U,usersemailpage,da2,V,W)* -> .
+408[0:Res:273.1,32.0] || SkP1(U,usersemailpage,da2,V,W)* -> .
+409[0:Res:272.1,32.0] || SkP2(U,usersemailpage,da2,V,W)* -> .
+438[0:Res:274.1,31.0] || SkP0(U,authenticationcode,da2,V,W)* -> .
+439[0:Res:273.1,31.0] || SkP1(U,authenticationcode,da2,V,W)* -> .
+440[0:Res:272.1,31.0] || SkP2(U,authenticationcode,da2,V,W)* -> .
+469[0:Res:274.1,30.0] || SkP0(U,authenticationcode,da1,V,W)* -> .
+470[0:Res:273.1,30.0] || SkP1(U,authenticationcode,da1,V,W)* -> .
+471[0:Res:272.1,30.0] || SkP2(U,authenticationcode,da1,V,W)* -> .
+500[0:Res:274.1,29.0] || SkP0(U,codemessage,da1,V,W)* -> .
+501[0:Res:273.1,29.0] || SkP1(U,codemessage,da1,V,W)* -> .
+502[0:Res:272.1,29.0] || SkP2(U,codemessage,da1,V,W)* -> .
+531[0:Res:274.1,28.0] || SkP0(U,codemessage,da3,V,W)* -> .
+532[0:Res:273.1,28.0] || SkP1(U,codemessage,da3,V,W)* -> .
+533[0:Res:272.1,28.0] || SkP2(U,codemessage,da3,V,W)* -> .
+562[0:Res:274.1,27.0] || SkP0(U,2stepverification,da1,V,W)* -> .
+563[0:Res:273.1,27.0] || SkP1(U,2stepverification,da1,V,W)* -> .
+564[0:Res:272.1,27.0] || SkP2(U,2stepverification,da1,V,W)* -> .
+593[0:Res:274.1,26.0] || SkP0(U,2stepverification,da2,V,W)* -> .
+594[0:Res:273.1,26.0] || SkP1(U,2stepverification,da2,V,W)* -> .
+595[0:Res:272.1,26.0] || SkP2(U,2stepverification,da2,V,W)* -> .
+373[0:Res:52.1,33.0] || SkP0(U,usersemailpage,V,W,da1)* -> .
+374[0:Res:55.1,33.0] || SkP1(U,usersemailpage,V,W,da1)* -> .
+375[0:Res:58.1,33.0] || SkP2(U,usersemailpage,V,W,da1)* -> .
+404[0:Res:52.1,32.0] || SkP0(U,usersemailpage,V,W,da2)* -> .
+405[0:Res:55.1,32.0] || SkP1(U,usersemailpage,V,W,da2)* -> .
+406[0:Res:58.1,32.0] || SkP2(U,usersemailpage,V,W,da2)* -> .
+435[0:Res:52.1,31.0] || SkP0(U,authenticationcode,V,W,da2)* -> .
+436[0:Res:55.1,31.0] || SkP1(U,authenticationcode,V,W,da2)* -> .
+437[0:Res:58.1,31.0] || SkP2(U,authenticationcode,V,W,da2)* -> .
+466[0:Res:52.1,30.0] || SkP0(U,authenticationcode,V,W,da1)* -> .
+467[0:Res:55.1,30.0] || SkP1(U,authenticationcode,V,W,da1)* -> .
+468[0:Res:58.1,30.0] || SkP2(U,authenticationcode,V,W,da1)* -> .
+497[0:Res:52.1,29.0] || SkP0(U,codemessage,V,W,da1)* -> .
+498[0:Res:55.1,29.0] || SkP1(U,codemessage,V,W,da1)* -> .
+499[0:Res:58.1,29.0] || SkP2(U,codemessage,V,W,da1)* -> .
+528[0:Res:52.1,28.0] || SkP0(U,codemessage,V,W,da3)* -> .
+529[0:Res:55.1,28.0] || SkP1(U,codemessage,V,W,da3)* -> .
+530[0:Res:58.1,28.0] || SkP2(U,codemessage,V,W,da3)* -> .
+559[0:Res:52.1,27.0] || SkP0(U,2stepverification,V,W,da1)* -> .
+560[0:Res:55.1,27.0] || SkP1(U,2stepverification,V,W,da1)* -> .
+561[0:Res:58.1,27.0] || SkP2(U,2stepverification,V,W,da1)* -> .
+590[0:Res:52.1,26.0] || SkP0(U,2stepverification,V,W,da2)* -> .
+591[0:Res:55.1,26.0] || SkP1(U,2stepverification,V,W,da2)* -> .
+592[0:Res:58.1,26.0] || SkP2(U,2stepverification,V,W,da2)* -> .
+311[0:MRR:119.0,309.0] ||  -> L1_O(sent(uc,s,pair(email,password)),dy)*.
+313[0:MRR:117.0,309.0] ||  -> L1_I(sent(uc,s,pair(email,password)),dy)*.
+314[0:MRR:116.0,309.0] ||  -> L1_S(sent(uc,s,pair(email,password)),dy)*.
+310[0:MRR:120.0,309.0] ||  -> L1_F(sent(uc,s,pair(email,password)),dy)*.
+312[0:MRR:118.0,309.0] ||  -> L1_C(sent(uc,s,pair(email,password)),dy)*.
+315[0:MRR:115.0,309.0] ||  -> L1_B(sent(uc,s,pair(email,password)),dy)*.
+308[0:MRR:99.0,307.0] ||  -> L3_E(sent(uc,s,pair(email,password)),da1)*.
+309[0:MRR:113.0,308.0] ||  -> L2_E(sent(uc,s,pair(email,password)),da2)*.
+316[0:MRR:114.0,309.0] ||  -> L1_E(sent(uc,s,pair(email,password)),dy)*.
+51[0:Inp] || KnowsEncr(dy,encr(pair(email,password),keys))* -> .
+381[0:Res:67.2,33.0] Agent(da1) || KnowsPair(da1,pair(usersemailpage,U))* -> .
+412[0:Res:67.2,32.0] Agent(da2) || KnowsPair(da2,pair(usersemailpage,U))* -> .
+443[0:Res:67.2,31.0] Agent(da2) || KnowsPair(da2,pair(authenticationcode,U))* -> .
+474[0:Res:67.2,30.0] Agent(da1) || KnowsPair(da1,pair(authenticationcode,U))* -> .
+505[0:Res:67.2,29.0] Agent(da1) || KnowsPair(da1,pair(codemessage,U))* -> .
+536[0:Res:67.2,28.0] Agent(da3) || KnowsPair(da3,pair(codemessage,U))* -> .
+567[0:Res:67.2,27.0] Agent(da1) || KnowsPair(da1,pair(2stepverification,U))* -> .
+598[0:Res:67.2,26.0] Agent(da2) || KnowsPair(da2,pair(2stepverification,U))* -> .
+380[0:Res:68.2,33.0] Agent(da1) || KnowsPair(da1,pair(U,usersemailpage))* -> .
+411[0:Res:68.2,32.0] Agent(da2) || KnowsPair(da2,pair(U,usersemailpage))* -> .
+442[0:Res:68.2,31.0] Agent(da2) || KnowsPair(da2,pair(U,authenticationcode))* -> .
+473[0:Res:68.2,30.0] Agent(da1) || KnowsPair(da1,pair(U,authenticationcode))* -> .
+504[0:Res:68.2,29.0] Agent(da1) || KnowsPair(da1,pair(U,codemessage))* -> .
+535[0:Res:68.2,28.0] Agent(da3) || KnowsPair(da3,pair(U,codemessage))* -> .
+566[0:Res:68.2,27.0] Agent(da1) || KnowsPair(da1,pair(U,2stepverification))* -> .
+597[0:Res:68.2,26.0] Agent(da2) || KnowsPair(da2,pair(U,2stepverification))* -> .
+60[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(W,U).
+59[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(Y,U).
+58[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(Y,V).
+57[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(W,U).
+56[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(Y,U).
+55[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(Y,V).
+54[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(W,U).
+53[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(Y,U).
+52[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(Y,V).
+272[0:MRR:98.0,60.1] || SkP2(U,V,W,X,Y)* -> Knows(W,V).
+273[0:MRR:97.0,57.1] || SkP1(U,V,W,X,Y)* -> Knows(W,V).
+274[0:MRR:96.0,54.1] || SkP0(U,V,W,X,Y)* -> Knows(W,V).
+64[0:Inp] || SkP1(U,V,W,X,Y)* -> L2_Sender(X,W,U).
+63[0:Inp] || SkP1(U,V,W,X,Y)* -> L2_Sender(X,W,V).
+62[0:Inp] || SkP0(U,V,W,X,Y)* -> L3_Sender(X,W,U).
+61[0:Inp] || SkP0(U,V,W,X,Y)* -> L3_Sender(X,W,V).
+66[0:Inp] || SkP2(U,V,W,X,Y)* -> L1_Sender(X,W,U).
+65[0:Inp] || SkP2(U,V,W,X,Y)* -> L1_Sender(X,W,V).
+68[0:Inp] Agent(U) || KnowsPair(U,pair(V,W))* -> Knows(U,W).
+67[0:Inp] Agent(U) || KnowsPair(U,pair(V,W))* -> Knows(U,V).
+382[0:Res:106.4,33.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,usersemailpage)* -> .
+413[0:Res:106.4,32.0] Attacker(U) Honest(da2) Agent(da2) || Knows(U,usersemailpage)* -> .
+444[0:Res:106.4,31.0] Attacker(U) Honest(da2) Agent(da2) || Knows(U,authenticationcode)* -> .
+475[0:Res:106.4,30.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,authenticationcode)* -> .
+506[0:Res:106.4,29.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,codemessage)* -> .
+537[0:Res:106.4,28.0] Attacker(U) Honest(da3) Agent(da3) || Knows(U,codemessage)* -> .
+568[0:Res:106.4,27.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,2stepverification)* -> .
+599[0:Res:106.4,26.0] Attacker(U) Honest(da2) Agent(da2) || Knows(U,2stepverification)* -> .
+106[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W)* -> Knows(U,W)*.
+100[0:Inp] Agent(U) || Knows(U,V) Knows(U,W) -> KnowsPair(U,pair(V,W))*.
+379[0:Res:122.4,33.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(usersemailpage,U))* -> .
+410[0:Res:122.4,32.0] Key(U) Agent(da2) || Knows(da2,U) KnowsEncr(da2,encr(usersemailpage,U))* -> .
+441[0:Res:122.4,31.0] Key(U) Agent(da2) || Knows(da2,U) KnowsEncr(da2,encr(authenticationcode,U))* -> .
+472[0:Res:122.4,30.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(authenticationcode,U))* -> .
+503[0:Res:122.4,29.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(codemessage,U))* -> .
+534[0:Res:122.4,28.0] Key(U) Agent(da3) || Knows(da3,U) KnowsEncr(da3,encr(codemessage,U))* -> .
+565[0:Res:122.4,27.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(2stepverification,U))* -> .
+596[0:Res:122.4,26.0] Key(U) Agent(da2) || Knows(da2,U) KnowsEncr(da2,encr(2stepverification,U))* -> .
+111[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L2_Sender(V,U,W)*.
+110[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L3_Sender(V,U,W)*.
+112[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L1_Sender(V,U,W)*.
+123[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L3_I(sent(V,U,W),V)*.
+124[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L2_I(sent(V,U,W),V)*.
+125[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L1_I(sent(V,U,W),V)*.
+121[0:Inp] Key(U) Agent(V) || Knows(V,U) Knows(V,W) -> KnowsEncr(V,encr(W,U))*.
+122[0:Inp] Key(U) Agent(V) || Knows(V,U) KnowsEncr(V,encr(W,U))* -> Knows(V,W).
+126[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X))* -> KnowsPair(U,pair(W,X))*.
+133[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L2_Sender(V,U,pair(W,X))*.
+134[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L3_Sender(V,U,pair(W,X))*.
+132[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L1_Sender(V,U,pair(W,X))*.
+140[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L3_I(sent(V,U,pair(W,X)),V)*.
+139[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L2_I(sent(V,U,pair(W,X)),V)*.
+138[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L1_I(sent(V,U,pair(W,X)),V)*.
+142[0:Inp] Key(U) Agent(V) || Knows(V,U) KnowsPair(V,pair(W,X)) -> KnowsEncr(V,encr(pair(W,X),U))*.
+141[0:Inp] Key(U) Agent(V) || Knows(V,U) KnowsEncr(V,encr(pair(W,X),U))* -> KnowsPair(V,pair(W,X)).
+618[0:MRR:605.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L3_B(sent(V,U,2stepverification),da2)* -> .
+625[0:MRR:574.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L3_B(sent(V,U,2stepverification),da1)* -> .
+632[0:MRR:543.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L3_B(sent(V,U,codemessage),da3)* -> .
+639[0:MRR:512.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L3_B(sent(V,U,codemessage),da1)* -> .
+646[0:MRR:481.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L3_B(sent(V,U,authenticationcode),da1)* -> .
+653[0:MRR:450.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L3_B(sent(V,U,authenticationcode),da2)* -> .
+660[0:MRR:419.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L3_B(sent(V,U,usersemailpage),da2)* -> .
+667[0:MRR:388.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L3_B(sent(V,U,usersemailpage),da1)* -> .
+617[0:MRR:606.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L2_B(sent(V,U,2stepverification),da2)* -> .
+624[0:MRR:575.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L2_B(sent(V,U,2stepverification),da1)* -> .
+631[0:MRR:544.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L2_B(sent(V,U,codemessage),da3)* -> .
+638[0:MRR:513.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L2_B(sent(V,U,codemessage),da1)* -> .
+645[0:MRR:482.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L2_B(sent(V,U,authenticationcode),da1)* -> .
+652[0:MRR:451.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L2_B(sent(V,U,authenticationcode),da2)* -> .
+659[0:MRR:420.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L2_B(sent(V,U,usersemailpage),da2)* -> .
+666[0:MRR:389.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L2_B(sent(V,U,usersemailpage),da1)* -> .
+616[0:MRR:607.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L1_B(sent(V,U,2stepverification),da2)* -> .
+623[0:MRR:576.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L1_B(sent(V,U,2stepverification),da1)* -> .
+630[0:MRR:545.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L1_B(sent(V,U,codemessage),da3)* -> .
+637[0:MRR:514.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L1_B(sent(V,U,codemessage),da1)* -> .
+644[0:MRR:483.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L1_B(sent(V,U,authenticationcode),da1)* -> .
+651[0:MRR:452.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L1_B(sent(V,U,authenticationcode),da2)* -> .
+658[0:MRR:421.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L1_B(sent(V,U,usersemailpage),da2)* -> .
+665[0:MRR:390.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L1_B(sent(V,U,usersemailpage),da1)* -> .
+620[0:MRR:603.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L2_E(sent(V,U,2stepverification),da2)* -> .
+621[0:MRR:602.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L3_E(sent(V,U,2stepverification),da2)* -> .
+627[0:MRR:572.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L2_E(sent(V,U,2stepverification),da1)* -> .
+628[0:MRR:571.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L3_E(sent(V,U,2stepverification),da1)* -> .
+634[0:MRR:541.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L2_E(sent(V,U,codemessage),da3)* -> .
+635[0:MRR:540.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L3_E(sent(V,U,codemessage),da3)* -> .
+641[0:MRR:510.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L2_E(sent(V,U,codemessage),da1)* -> .
+642[0:MRR:509.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L3_E(sent(V,U,codemessage),da1)* -> .
+648[0:MRR:479.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L2_E(sent(V,U,authenticationcode),da1)* -> .
+649[0:MRR:478.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L3_E(sent(V,U,authenticationcode),da1)* -> .
+655[0:MRR:448.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L2_E(sent(V,U,authenticationcode),da2)* -> .
+656[0:MRR:447.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L3_E(sent(V,U,authenticationcode),da2)* -> .
+662[0:MRR:417.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L2_E(sent(V,U,usersemailpage),da2)* -> .
+663[0:MRR:416.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L3_E(sent(V,U,usersemailpage),da2)* -> .
+669[0:MRR:386.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L2_E(sent(V,U,usersemailpage),da1)* -> .
+670[0:MRR:385.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L3_E(sent(V,U,usersemailpage),da1)* -> .
+619[0:MRR:604.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L1_E(sent(V,U,2stepverification),da2)* -> .
+626[0:MRR:573.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L1_E(sent(V,U,2stepverification),da1)* -> .
+633[0:MRR:542.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L1_E(sent(V,U,codemessage),da3)* -> .
+640[0:MRR:511.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L1_E(sent(V,U,codemessage),da1)* -> .
+647[0:MRR:480.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L1_E(sent(V,U,authenticationcode),da1)* -> .
+654[0:MRR:449.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L1_E(sent(V,U,authenticationcode),da2)* -> .
+661[0:MRR:418.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L1_E(sent(V,U,usersemailpage),da2)* -> .
+668[0:MRR:387.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L1_E(sent(V,U,usersemailpage),da1)* -> .
+615[0:MRR:608.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) L1_F(sent(V,U,2stepverification),da2)* -> .
+622[0:MRR:577.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) L1_F(sent(V,U,2stepverification),da1)* -> .
+629[0:MRR:546.4,7.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) L1_F(sent(V,U,codemessage),da3)* -> .
+636[0:MRR:515.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) L1_F(sent(V,U,codemessage),da1)* -> .
+643[0:MRR:484.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) L1_F(sent(V,U,authenticationcode),da1)* -> .
+650[0:MRR:453.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) L1_F(sent(V,U,authenticationcode),da2)* -> .
+657[0:MRR:422.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) L1_F(sent(V,U,usersemailpage),da2)* -> .
+664[0:MRR:391.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) L1_F(sent(V,U,usersemailpage),da1)* -> .
+146[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Knows(U,X) -> L3_S(sent(W,V,X),U)*.
+145[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Knows(U,X) -> L2_S(sent(W,V,X),U)*.
+144[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Knows(U,X) -> L1_S(sent(W,V,X),U)*.
+143[0:Inp] Key(U) Honest(V) Agent(V) Attacker(W) || Knows(W,U)* Knows(W,X)* -> KnowsEncr(V,encr(X,U))*.
+147[0:Inp] Key(U) Honest(V) Agent(V) Attacker(W) || Knows(W,U) Knows(W,X) -> L1_Sender(W,V,encr(X,U))*.
+610[0:Res:160.7,26.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,2stepverification) L2_E(sent(V,da2,2stepverification),U)* -> .
+609[0:Res:162.7,26.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,2stepverification) L3_E(sent(V,da2,2stepverification),U)* -> .
+579[0:Res:160.7,27.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,2stepverification) L2_E(sent(V,da1,2stepverification),U)* -> .
+578[0:Res:162.7,27.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,2stepverification) L3_E(sent(V,da1,2stepverification),U)* -> .
+548[0:Res:160.7,28.0] Attacker(U) Agent(V) Honest(V) Honest(da3) Agent(da3) || Knows(V,codemessage) L2_E(sent(V,da3,codemessage),U)* -> .
+547[0:Res:162.7,28.0] Attacker(U) Agent(V) Honest(V) Honest(da3) Agent(da3) || Knows(V,codemessage) L3_E(sent(V,da3,codemessage),U)* -> .
+517[0:Res:160.7,29.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,codemessage) L2_E(sent(V,da1,codemessage),U)* -> .
+516[0:Res:162.7,29.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,codemessage) L3_E(sent(V,da1,codemessage),U)* -> .
+486[0:Res:160.7,30.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,authenticationcode) L2_E(sent(V,da1,authenticationcode),U)* -> .
+485[0:Res:162.7,30.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,authenticationcode) L3_E(sent(V,da1,authenticationcode),U)* -> .
+455[0:Res:160.7,31.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,authenticationcode) L2_E(sent(V,da2,authenticationcode),U)* -> .
+454[0:Res:162.7,31.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,authenticationcode) L3_E(sent(V,da2,authenticationcode),U)* -> .
+424[0:Res:160.7,32.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,usersemailpage) L2_E(sent(V,da2,usersemailpage),U)* -> .
+423[0:Res:162.7,32.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,usersemailpage) L3_E(sent(V,da2,usersemailpage),U)* -> .
+393[0:Res:160.7,33.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,usersemailpage) L2_E(sent(V,da1,usersemailpage),U)* -> .
+392[0:Res:162.7,33.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,usersemailpage) L3_E(sent(V,da1,usersemailpage),U)* -> .
+611[0:Res:158.7,26.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,2stepverification) L1_E(sent(V,da2,2stepverification),U)* -> .
+580[0:Res:158.7,27.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,2stepverification) L1_E(sent(V,da1,2stepverification),U)* -> .
+549[0:Res:158.7,28.0] Attacker(U) Agent(V) Honest(V) Honest(da3) Agent(da3) || Knows(V,codemessage) L1_E(sent(V,da3,codemessage),U)* -> .
+518[0:Res:158.7,29.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,codemessage) L1_E(sent(V,da1,codemessage),U)* -> .
+487[0:Res:158.7,30.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,authenticationcode) L1_E(sent(V,da1,authenticationcode),U)* -> .
+456[0:Res:158.7,31.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,authenticationcode) L1_E(sent(V,da2,authenticationcode),U)* -> .
+425[0:Res:158.7,32.0] Attacker(U) Agent(V) Honest(V) Honest(da2) Agent(da2) || Knows(V,usersemailpage) L1_E(sent(V,da2,usersemailpage),U)* -> .
+394[0:Res:158.7,33.0] Attacker(U) Agent(V) Honest(V) Honest(da1) Agent(da1) || Knows(V,usersemailpage) L1_E(sent(V,da1,usersemailpage),U)* -> .
+672[0:MRR:600.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) Knows(V,2stepverification) L3_F(sent(V,U,2stepverification),da2)* -> .
+674[0:MRR:569.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) Knows(V,2stepverification) L3_F(sent(V,U,2stepverification),da1)* -> .
+676[0:MRR:538.4,7.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) Knows(V,codemessage) L3_F(sent(V,U,codemessage),da3)* -> .
+678[0:MRR:507.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) Knows(V,codemessage) L3_F(sent(V,U,codemessage),da1)* -> .
+680[0:MRR:476.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) Knows(V,authenticationcode) L3_F(sent(V,U,authenticationcode),da1)* -> .
+682[0:MRR:445.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) Knows(V,authenticationcode) L3_F(sent(V,U,authenticationcode),da2)* -> .
+684[0:MRR:414.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) Knows(V,usersemailpage) L3_F(sent(V,U,usersemailpage),da2)* -> .
+686[0:MRR:383.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) Knows(V,usersemailpage) L3_F(sent(V,U,usersemailpage),da1)* -> .
+671[0:MRR:601.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) Knows(V,2stepverification) L2_F(sent(V,U,2stepverification),da2)* -> .
+673[0:MRR:570.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) Knows(V,2stepverification) L2_F(sent(V,U,2stepverification),da1)* -> .
+675[0:MRR:539.4,7.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) Knows(V,codemessage) L2_F(sent(V,U,codemessage),da3)* -> .
+677[0:MRR:508.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) Knows(V,codemessage) L2_F(sent(V,U,codemessage),da1)* -> .
+679[0:MRR:477.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) Knows(V,authenticationcode) L2_F(sent(V,U,authenticationcode),da1)* -> .
+681[0:MRR:446.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) Knows(V,authenticationcode) L2_F(sent(V,U,authenticationcode),da2)* -> .
+683[0:MRR:415.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) Knows(V,usersemailpage) L2_F(sent(V,U,usersemailpage),da2)* -> .
+685[0:MRR:384.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) Knows(V,usersemailpage) L2_F(sent(V,U,usersemailpage),da1)* -> .
+148[0:Inp] Key(U) Honest(V) Agent(V) Attacker(W) || Knows(W,U) Knows(W,X) -> L1_I(sent(W,V,encr(X,U)),W)*.
+156[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L3_B(sent(W,V,X),U)* -> Knows(U,X).
+155[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_B(sent(W,V,X),U)* -> Knows(U,X).
+154[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L1_B(sent(W,V,X),U)* -> Knows(U,X).
+160[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_E(sent(W,V,X),U)* -> Knows(V,X).
+162[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L3_E(sent(W,V,X),U)* -> Knows(V,X).
+159[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_E(sent(W,V,X),U)* -> Knows(U,X).
+161[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L3_E(sent(W,V,X),U)* -> Knows(U,X).
+158[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L1_E(sent(W,V,X),U)* -> Knows(V,X).
+157[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L1_E(sent(W,V,X),U)* -> Knows(U,X).
+149[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) L1_F(sent(W,V,X),U)* -> Knows(U,X).
+153[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(U,pair(X,Y)) -> L3_S(sent(W,V,pair(X,Y)),U)*.
+152[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(U,pair(X,Y)) -> L2_S(sent(W,V,pair(X,Y)),U)*.
+151[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(U,pair(X,Y)) -> L1_S(sent(W,V,pair(X,Y)),U)*.
+150[0:Inp] Key(U) Agent(V) Honest(V) Attacker(W) || Knows(W,U)* KnowsPair(W,pair(X,Y))* -> KnowsEncr(V,encr(pair(X,Y),U))*.
+171[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L3_B(sent(W,V,X),U)* -> L3_WasBlocked(V,X,U).
+169[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_B(sent(W,V,X),U)* -> L2_WasBlocked(V,X,U).
+167[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L1_B(sent(W,V,X),U)* -> L1_WasBlocked(V,X,U).
+170[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L3_B(sent(W,V,X),U)* -> L3_Sender(W,V,X).
+168[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_B(sent(W,V,X),U)* -> L2_Sender(W,V,X).
+173[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_E(sent(W,V,X),U)* -> L2_Sender(W,V,X).
+174[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L3_E(sent(W,V,X),U)* -> L3_Sender(W,V,X).
+166[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L1_B(sent(W,V,X),U)* -> L1_Sender(W,V,X).
+172[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L1_E(sent(W,V,X),U)* -> L1_Sender(W,V,X).
+163[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) L1_F(sent(W,V,X),U)* -> L1_Sender(W,V,X).
+164[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) L1_F(sent(W,V,X),U)* -> Knows(U,hash(X)).
+165[0:Inp] Key(U) Agent(V) Honest(V) Attacker(W) || Knows(W,U) KnowsPair(W,pair(X,Y)) -> L1_Sender(W,V,encr(pair(X,Y),U))*.
+175[0:Inp] Key(U) Agent(V) Honest(V) Attacker(W) || Knows(W,U) KnowsPair(W,pair(X,Y)) -> L1_I(sent(W,V,encr(pair(X,Y),U)),W)*.
+689[0:MRR:612.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,2stepverification) Knows(da2,U) L3_C(sent(W,V,encr(2stepverification,U)),da2)* -> .
+692[0:MRR:581.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,2stepverification) Knows(da1,U) L3_C(sent(W,V,encr(2stepverification,U)),da1)* -> .
+695[0:MRR:550.4,7.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,codemessage) Knows(da3,U) L3_C(sent(W,V,encr(codemessage,U)),da3)* -> .
+698[0:MRR:519.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,codemessage) Knows(da1,U) L3_C(sent(W,V,encr(codemessage,U)),da1)* -> .
+701[0:MRR:488.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,authenticationcode) Knows(da1,U) L3_C(sent(W,V,encr(authenticationcode,U)),da1)* -> .
+704[0:MRR:457.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,authenticationcode) Knows(da2,U) L3_C(sent(W,V,encr(authenticationcode,U)),da2)* -> .
+707[0:MRR:426.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,usersemailpage) Knows(da2,U) L3_C(sent(W,V,encr(usersemailpage,U)),da2)* -> .
+710[0:MRR:395.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,usersemailpage) Knows(da1,U) L3_C(sent(W,V,encr(usersemailpage,U)),da1)* -> .
+688[0:MRR:613.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,2stepverification) Knows(da2,U) L2_C(sent(W,V,encr(2stepverification,U)),da2)* -> .
+691[0:MRR:582.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,2stepverification) Knows(da1,U) L2_C(sent(W,V,encr(2stepverification,U)),da1)* -> .
+694[0:MRR:551.4,7.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,codemessage) Knows(da3,U) L2_C(sent(W,V,encr(codemessage,U)),da3)* -> .
+697[0:MRR:520.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,codemessage) Knows(da1,U) L2_C(sent(W,V,encr(codemessage,U)),da1)* -> .
+700[0:MRR:489.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,authenticationcode) Knows(da1,U) L2_C(sent(W,V,encr(authenticationcode,U)),da1)* -> .
+703[0:MRR:458.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,authenticationcode) Knows(da2,U) L2_C(sent(W,V,encr(authenticationcode,U)),da2)* -> .
+706[0:MRR:427.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,usersemailpage) Knows(da2,U) L2_C(sent(W,V,encr(usersemailpage,U)),da2)* -> .
+709[0:MRR:396.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,usersemailpage) Knows(da1,U) L2_C(sent(W,V,encr(usersemailpage,U)),da1)* -> .
+687[0:MRR:614.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,2stepverification) Knows(da2,U) L1_C(sent(W,V,encr(2stepverification,U)),da2)* -> .
+690[0:MRR:583.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,2stepverification) Knows(da1,U) L1_C(sent(W,V,encr(2stepverification,U)),da1)* -> .
+693[0:MRR:552.4,7.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,codemessage) Knows(da3,U) L1_C(sent(W,V,encr(codemessage,U)),da3)* -> .
+696[0:MRR:521.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,codemessage) Knows(da1,U) L1_C(sent(W,V,encr(codemessage,U)),da1)* -> .
+699[0:MRR:490.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,authenticationcode) Knows(da1,U) L1_C(sent(W,V,encr(authenticationcode,U)),da1)* -> .
+702[0:MRR:459.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,authenticationcode) Knows(da2,U) L1_C(sent(W,V,encr(authenticationcode,U)),da2)* -> .
+705[0:MRR:428.4,11.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,usersemailpage) Knows(da2,U) L1_C(sent(W,V,encr(usersemailpage,U)),da2)* -> .
+708[0:MRR:397.4,9.0] Key(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,usersemailpage) Knows(da1,U) L1_C(sent(W,V,encr(usersemailpage,U)),da1)* -> .
+177[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) Knows(W,X) L3_F(sent(W,V,X),U)* -> Knows(U,X).
+176[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) Knows(W,X) L2_F(sent(W,V,X),U)* -> Knows(U,X).
+181[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) Knows(W,X) L3_F(sent(W,V,X),U)* -> L3_Sender(W,V,X).
+178[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) Knows(W,X) L2_F(sent(W,V,X),U)* -> L2_Sender(W,V,X).
+180[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) Knows(W,X) L3_F(sent(W,V,X),U)* -> Knows(U,hash(X)).
+179[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Function(hash(X)) Knows(W,X) L2_F(sent(W,V,X),U)* -> Knows(U,hash(X)).
+184[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L3_B(sent(W,V,pair(X,Y)),U)* -> KnowsPair(U,pair(X,Y)).
+183[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L2_B(sent(W,V,pair(X,Y)),U)* -> KnowsPair(U,pair(X,Y)).
+182[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L1_B(sent(W,V,pair(X,Y)),U)* -> KnowsPair(U,pair(X,Y)).
+188[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L2_E(sent(W,V,pair(X,Y)),U)* -> KnowsPair(V,pair(X,Y)).
+190[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L3_E(sent(W,V,pair(X,Y)),U)* -> KnowsPair(V,pair(X,Y)).
+187[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L2_E(sent(W,V,pair(X,Y)),U)* -> KnowsPair(U,pair(X,Y)).
+189[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L3_E(sent(W,V,pair(X,Y)),U)* -> KnowsPair(U,pair(X,Y)).
+186[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L1_E(sent(W,V,pair(X,Y)),U)* -> KnowsPair(V,pair(X,Y)).
+185[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L1_E(sent(W,V,pair(X,Y)),U)* -> KnowsPair(U,pair(X,Y)).
+196[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L3_B(sent(W,V,pair(X,Y)),U)* -> L3_WasBlocked(V,pair(X,Y),U).
+194[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L2_B(sent(W,V,pair(X,Y)),U)* -> L2_WasBlocked(V,pair(X,Y),U).
+192[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L1_B(sent(W,V,pair(X,Y)),U)* -> L1_WasBlocked(V,pair(X,Y),U).
+195[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L3_B(sent(W,V,pair(X,Y)),U)* -> L3_Sender(W,V,pair(X,Y)).
+193[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L2_B(sent(W,V,pair(X,Y)),U)* -> L2_Sender(W,V,pair(X,Y)).
+198[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L2_E(sent(W,V,pair(X,Y)),U)* -> L2_Sender(W,V,pair(X,Y)).
+199[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L3_E(sent(W,V,pair(X,Y)),U)* -> L3_Sender(W,V,pair(X,Y)).
+191[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L1_B(sent(W,V,pair(X,Y)),U)* -> L1_Sender(W,V,pair(X,Y)).
+197[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || KnowsPair(W,pair(X,Y)) L1_E(sent(W,V,pair(X,Y)),U)* -> L1_Sender(W,V,pair(X,Y)).
+277[0:MRR:210.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L3_C(sent(X,W,encr(Y,U)),V)* -> Knows(V,Y).
+276[0:MRR:209.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L2_C(sent(X,W,encr(Y,U)),V)* -> Knows(V,Y).
+275[0:MRR:208.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L1_C(sent(X,W,encr(Y,U)),V)* -> Knows(V,Y).
+280[0:MRR:216.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L3_C(sent(X,W,encr(Y,U)),V)* -> L3_Sender(X,W,Y).
+279[0:MRR:215.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L2_C(sent(X,W,encr(Y,U)),V)* -> L2_Sender(X,W,Y).
+278[0:MRR:214.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L1_C(sent(X,W,encr(Y,U)),V)* -> L1_Sender(X,W,Y).
+283[0:MRR:220.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L3_C(sent(X,W,encr(Y,U)),V)* -> KnowsEncr(W,encr(Y,U)).
+282[0:MRR:219.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L2_C(sent(X,W,encr(Y,U)),V)* -> KnowsEncr(W,encr(Y,U)).
+281[0:MRR:218.9,106.4] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(V,U) Knows(X,Y) L1_C(sent(X,W,encr(Y,U)),V)* -> KnowsEncr(W,encr(Y,U)).
+201[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_B(sent(X,W,encr(Y,U)),V)* -> KnowsEncr(V,encr(Y,U)).
+200[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_E(sent(X,W,encr(Y,U)),V)* -> KnowsEncr(W,encr(Y,U)).
+202[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_E(sent(X,W,encr(Y,U)),V)* -> KnowsEncr(V,encr(Y,U)).
+206[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_B(sent(X,W,encr(Y,U)),V)* -> L1_WasBlocked(W,encr(Y,U),V).
+205[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_B(sent(X,W,encr(Y,U)),V)* -> L1_Sender(X,W,encr(Y,U)).
+207[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_E(sent(X,W,encr(Y,U)),V)* -> L1_Sender(X,W,encr(Y,U)).
+204[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_E(sent(X,W,encr(Y,U)),V)* -> L1_Sender(V,W,encr(Y,U)).
+217[0:Inp] Key(U) Attacker(V) Honest(W) Agent(W) Agent(X) Honest(X) || Knows(X,U) Knows(X,Y) L1_E(sent(X,W,encr(Y,U)),V) -> L1_S(sent(X,W,encr(Y,U)),V)*.
+213[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Knows(V,X) Knows(V,Y) L3_O(sent(V,W,Y),U) L3_O(sent(V,W,X),U) -> SkP0(Y,X,W,V,U)*.
+212[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Knows(V,X) Knows(V,Y) L2_O(sent(V,W,Y),U) L2_O(sent(V,W,X),U) -> SkP1(Y,X,W,V,U)*.
+211[0:Inp] Attacker(U) Agent(V) Honest(V) Honest(W) Agent(W) || Knows(V,X) Knows(V,Y) L1_O(sent(V,W,Y),U) L1_O(sent(V,W,X),U) -> SkP2(Y,X,W,V,U)*.
+286[0:MRR:231.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L3_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsPair(V,pair(Y,Z)).
+285[0:MRR:230.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L2_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsPair(V,pair(Y,Z)).
+284[0:MRR:229.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L1_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsPair(V,pair(Y,Z)).
+289[0:MRR:234.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L3_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> L3_Sender(X,W,pair(Y,Z)).
+288[0:MRR:233.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L2_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> L2_Sender(X,W,pair(Y,Z)).
+287[0:MRR:232.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L1_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> L1_Sender(X,W,pair(Y,Z)).
+292[0:MRR:238.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L3_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsEncr(W,encr(pair(Y,Z),U)).
+291[0:MRR:237.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L2_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsEncr(W,encr(pair(Y,Z),U)).
+290[0:MRR:236.7,106.4] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(V,U) KnowsPair(X,pair(Y,Z)) L1_C(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsEncr(W,encr(pair(Y,Z),U)).
+222[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_B(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsEncr(V,encr(pair(Y,Z),U)).
+221[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_E(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsEncr(W,encr(pair(Y,Z),U)).
+223[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_E(sent(X,W,encr(pair(Y,Z),U)),V)* -> KnowsEncr(V,encr(pair(Y,Z),U)).
+227[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_B(sent(X,W,encr(pair(Y,Z),U)),V)* -> L1_WasBlocked(W,encr(pair(Y,Z),U),V).
+226[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_B(sent(X,W,encr(pair(Y,Z),U)),V)* -> L1_Sender(X,W,encr(pair(Y,Z),U)).
+228[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_E(sent(X,W,encr(pair(Y,Z),U)),V)* -> L1_Sender(X,W,encr(pair(Y,Z),U)).
+225[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_E(sent(X,W,encr(pair(Y,Z),U)),V)* -> L1_Sender(V,W,encr(pair(Y,Z),U)).
+235[0:Inp] Key(U) Attacker(V) Agent(W) Honest(W) Honest(X) Agent(X) || Knows(X,U) KnowsPair(X,pair(Y,Z)) L1_E(sent(X,W,encr(pair(Y,Z),U)),V) -> L1_S(sent(X,W,encr(pair(Y,Z),U)),V)*.
+	Given clause: 14[0:Inp] ||  -> DY(dy)*.
+	Given clause: 12[0:Inp] ||  -> DA(da2)*.
+	Given clause: 10[0:Inp] ||  -> DA(da1)*.
+	Given clause: 8[0:Inp] ||  -> DA(da3)*.
+	Given clause: 15[0:Inp] ||  -> Key(keys)*.
+	Given clause: 13[0:Inp] ||  -> Attacker(dy)*.
+	Given clause: 11[0:Inp] ||  -> Attacker(da2)*.
+	Given clause: 9[0:Inp] ||  -> Attacker(da1)*.
+	Given clause: 7[0:Inp] ||  -> Attacker(da3)*.
+	Given clause: 6[0:Inp] ||  -> Honest(uc)*.
+	Given clause: 4[0:Inp] ||  -> Honest(up)*.
+	Given clause: 2[0:Inp] ||  -> Honest(s)*.
+	Given clause: 5[0:Inp] ||  -> Agent(uc)*.
+	Given clause: 3[0:Inp] ||  -> Agent(up)*.
+	Given clause: 1[0:Inp] ||  -> Agent(s)*.
+	Given clause: 21[0:Inp] ||  -> Knows(s,usersemailpage)*.
+	Given clause: 20[0:Inp] ||  -> Knows(uc,authenticationcode)*.
+	Given clause: 19[0:Inp] ||  -> Knows(s,codemessage)*.
+	Given clause: 18[0:Inp] ||  -> Knows(s,2stepverification)*.
+	Given clause: 17[0:Inp] ||  -> Knows(s,emailloginpage)*.
+	Given clause: 16[0:Inp] ||  -> Knows(uc,emailserverurl)*.
+	Given clause: 33[0:Inp] || Knows(da1,usersemailpage)* -> .
+	Given clause: 32[0:Inp] || Knows(da2,usersemailpage)* -> .
+	Given clause: 31[0:Inp] || Knows(da2,authenticationcode)* -> .
+	Given clause: 30[0:Inp] || Knows(da1,authenticationcode)* -> .
+	Given clause: 29[0:Inp] || Knows(da1,codemessage)* -> .
+	Given clause: 28[0:Inp] || Knows(da3,codemessage)* -> .
+	Given clause: 27[0:Inp] || Knows(da1,2stepverification)* -> .
+	Given clause: 26[0:Inp] || Knows(da2,2stepverification)* -> .
+	Given clause: 25[0:Inp] || Knows(da1,emailloginpage)* -> .
+	Given clause: 24[0:Inp] || Knows(da2,emailloginpage)* -> .
+	Given clause: 23[0:Inp] || Knows(da2,emailserverurl)* -> .
+	Given clause: 22[0:Inp] || Knows(da1,emailserverurl)* -> .
+	Given clause: 40[0:Inp] ||  -> KnowsEncr(s,encr(usersemailpage,keys))*.
+	Given clause: 39[0:Inp] ||  -> KnowsEncr(uc,encr(authenticationcode,keys))*.
+	Given clause: 38[0:Inp] ||  -> KnowsEncr(s,encr(2stepverification,keys))*.
+	Given clause: 36[0:Inp] ||  -> KnowsEncr(s,encr(emailloginpage,keys))*.
+	Given clause: 35[0:Inp] ||  -> KnowsEncr(uc,encr(emailserverurl,keys))*.
+	Given clause: 37[0:Inp] ||  -> KnowsPair(uc,pair(email,password))*.
+	Given clause: 34[0:Inp] Attacker(U) ||  -> Agent(U)*.
+	Given clause: 333[0:MRR:84.0,331.0] ||  -> L2_O(sent(s,up,codemessage),da3)*.
+	Given clause: 335[0:MRR:82.0,331.0] ||  -> L2_I(sent(s,up,codemessage),da3)*.
+	Given clause: 336[0:MRR:81.0,331.0] ||  -> L2_S(sent(s,up,codemessage),da3)*.
+	Given clause: 266[0:MRR:75.0,264.0] ||  -> L1_O(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 295[0:MRR:251.0,251.1,251.2,251.3,251.4,251.5,251.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_O(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 319[0:MRR:258.0,258.1,258.2,258.3,258.4,258.5,258.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_O(sent(s,uc,2stepverification),dy)*.
+	Given clause: 344[0:MRR:93.0,342.0] ||  -> L1_O(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 363[0:MRR:351.0,351.1,351.2,351.3,351.4,351.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_O(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 268[0:MRR:73.0,264.0] ||  -> L1_I(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 269[0:MRR:72.0,264.0] ||  -> L1_S(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 299[0:MRR:253.0,253.1,253.2,253.3,253.4,253.5,253.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_I(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 301[0:MRR:254.0,254.1,254.2,254.3,254.4,254.5,254.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_S(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 323[0:MRR:260.0,260.1,260.2,260.3,260.4,260.5,260.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_I(sent(s,uc,2stepverification),dy)*.
+	Given clause: 325[0:MRR:261.0,261.1,261.2,261.3,261.4,261.5,261.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_S(sent(s,uc,2stepverification),dy)*.
+	Given clause: 346[0:MRR:91.0,342.0] ||  -> L1_I(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 347[0:MRR:90.0,342.0] ||  -> L1_S(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 360[0:MRR:354.0,354.1,354.2,354.3,354.4,354.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_S(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 361[0:MRR:353.0,353.1,353.2,353.3,353.4,353.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_I(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 332[0:MRR:85.0,331.0] ||  -> L2_F(sent(s,up,codemessage),da3)*.
+	Given clause: 334[0:MRR:83.0,331.0] ||  -> L2_C(sent(s,up,codemessage),da3)*.
+	Given clause: 337[0:MRR:80.0,331.0] ||  -> L2_B(sent(s,up,codemessage),da3)*.
+	Given clause: 265[0:MRR:76.0,264.0] ||  -> L1_F(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 293[0:MRR:250.0,250.1,250.2,250.3,250.4,250.5,250.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_F(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 317[0:MRR:257.0,257.1,257.2,257.3,257.4,257.5,257.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_F(sent(s,uc,2stepverification),dy)*.
+	Given clause: 343[0:MRR:94.0,342.0] ||  -> L1_F(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 364[0:MRR:350.0,350.1,350.2,350.3,350.4,350.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_F(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 267[0:MRR:74.0,264.0] ||  -> L1_C(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 297[0:MRR:252.0,252.1,252.2,252.3,252.4,252.5,252.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_C(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 321[0:MRR:259.0,259.1,259.2,259.3,259.4,259.5,259.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_C(sent(s,uc,2stepverification),dy)*.
+	Given clause: 345[0:MRR:92.0,342.0] ||  -> L1_C(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 362[0:MRR:352.0,352.1,352.2,352.3,352.4,352.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_C(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 270[0:MRR:71.0,264.0] ||  -> L1_B(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 303[0:MRR:255.0,255.1,255.2,255.3,255.4,255.5,255.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_B(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 327[0:MRR:262.0,262.1,262.2,262.3,262.4,262.5,262.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_B(sent(s,uc,2stepverification),dy)*.
+	Given clause: 348[0:MRR:89.0,342.0] ||  -> L1_B(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 359[0:MRR:355.0,355.1,355.2,355.3,355.4,355.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_B(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 49[0:Inp] ||  -> L3_E(sent(uc,s,emailserverurl),da1)*.
+	Given clause: 264[0:MRR:69.0,49.0] ||  -> L2_E(sent(uc,s,emailserverurl),da2)*.
+	Given clause: 306[0:MRR:304.0,305.0] ||  -> L2_E(sent(s,uc,emailloginpage),da2)*.
+	Given clause: 307[0:MRR:77.0,306.0] ||  -> L3_E(sent(s,uc,emailloginpage),da1)*.
+	Given clause: 330[0:MRR:328.0,329.0] ||  -> L2_E(sent(s,uc,2stepverification),da2)*.
+	Given clause: 331[0:MRR:78.0,330.0] ||  -> L3_E(sent(s,uc,2stepverification),da1)*.
+	Given clause: 338[0:MRR:79.0,331.0] ||  -> L2_E(sent(s,up,codemessage),da3)*.
+	Given clause: 340[0:MRR:339.0,339.1,339.2,339.3,339.4,339.5,338.0,337.0,336.0,335.0,334.0,333.0] ||  -> L3_E(sent(s,up,codemessage),da1)*.
+	Given clause: 341[0:MRR:86.0,340.0] ||  -> L3_E(sent(uc,s,authenticationcode),da1)*.
+	Given clause: 342[0:MRR:87.0,341.0] ||  -> L2_E(sent(uc,s,authenticationcode),da2)*.
+	Given clause: 365[0:MRR:358.0,358.1,358.2,358.3,358.4,358.5,359.0,360.0,361.0,362.0,363.0,364.0] ||  -> L2_E(sent(s,uc,usersemailpage),da2)*.
+	Given clause: 366[0:MRR:95.0,365.0] ||  -> L3_E(sent(s,uc,usersemailpage),da1)*.
+	Given clause: 271[0:MRR:70.0,264.0] ||  -> L1_E(sent(uc,s,emailserverurl),dy)*.
+	Given clause: 305[0:MRR:256.0,256.1,256.2,256.3,256.4,256.5,256.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_E(sent(s,uc,emailloginpage),dy)*.
+	Given clause: 329[0:MRR:263.0,263.1,263.2,263.3,263.4,263.5,263.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_E(sent(s,uc,2stepverification),dy)*.
+	Given clause: 349[0:MRR:88.0,342.0] ||  -> L1_E(sent(uc,s,authenticationcode),dy)*.
+	Given clause: 357[0:MRR:356.0,356.1,356.2,356.3,356.4,356.5,349.0,348.0,347.0,346.0,345.0,344.0] ||  -> L1_E(sent(s,uc,usersemailpage),dy)*.
+	Given clause: 48[0:Inp] || KnowsEncr(dy,encr(usersemailpage,keys))* -> .
+	Given clause: 47[0:Inp] || KnowsEncr(dy,encr(authenticationcode,keys))* -> .
+	Given clause: 46[0:Inp] || KnowsEncr(dy,encr(2stepverification,keys))* -> .
+	Given clause: 42[0:Inp] || KnowsEncr(dy,encr(emailloginpage,keys))* -> .
+	Given clause: 41[0:Inp] || KnowsEncr(dy,encr(emailserverurl,keys))* -> .
+	Given clause: 45[0:Inp] || KnowsPair(dy,pair(email,password))* -> .
+	Given clause: 44[0:Inp] || KnowsPair(da2,pair(email,password))* -> .
+	Given clause: 43[0:Inp] || KnowsPair(da1,pair(email,password))* -> .
+	Given clause: 50[0:Inp] ||  -> KnowsEncr(uc,encr(pair(email,password),keys))*.
+	Given clause: 367[0:Res:54.1,33.0] || SkP0(usersemailpage,U,da1,V,W)* -> .
+	Given clause: 368[0:Res:57.1,33.0] || SkP1(usersemailpage,U,da1,V,W)* -> .
+	Given clause: 311[0:MRR:119.0,309.0] ||  -> L1_O(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 369[0:Res:60.1,33.0] || SkP2(usersemailpage,U,da1,V,W)* -> .
+	Given clause: 398[0:Res:54.1,32.0] || SkP0(usersemailpage,U,da2,V,W)* -> .
+	Given clause: 399[0:Res:57.1,32.0] || SkP1(usersemailpage,U,da2,V,W)* -> .
+	Given clause: 400[0:Res:60.1,32.0] || SkP2(usersemailpage,U,da2,V,W)* -> .
+	Given clause: 313[0:MRR:117.0,309.0] ||  -> L1_I(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 429[0:Res:54.1,31.0] || SkP0(authenticationcode,U,da2,V,W)* -> .
+	Given clause: 430[0:Res:57.1,31.0] || SkP1(authenticationcode,U,da2,V,W)* -> .
+	Given clause: 431[0:Res:60.1,31.0] || SkP2(authenticationcode,U,da2,V,W)* -> .
+	Given clause: 460[0:Res:54.1,30.0] || SkP0(authenticationcode,U,da1,V,W)* -> .
+	Given clause: 314[0:MRR:116.0,309.0] ||  -> L1_S(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 461[0:Res:57.1,30.0] || SkP1(authenticationcode,U,da1,V,W)* -> .
+	Given clause: 462[0:Res:60.1,30.0] || SkP2(authenticationcode,U,da1,V,W)* -> .
+	Given clause: 491[0:Res:54.1,29.0] || SkP0(codemessage,U,da1,V,W)* -> .
+	Given clause: 492[0:Res:57.1,29.0] || SkP1(codemessage,U,da1,V,W)* -> .
+	Given clause: 310[0:MRR:120.0,309.0] ||  -> L1_F(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 493[0:Res:60.1,29.0] || SkP2(codemessage,U,da1,V,W)* -> .
+	Given clause: 522[0:Res:54.1,28.0] || SkP0(codemessage,U,da3,V,W)* -> .
+	Given clause: 523[0:Res:57.1,28.0] || SkP1(codemessage,U,da3,V,W)* -> .
+	Given clause: 524[0:Res:60.1,28.0] || SkP2(codemessage,U,da3,V,W)* -> .
+	Given clause: 312[0:MRR:118.0,309.0] ||  -> L1_C(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 553[0:Res:54.1,27.0] || SkP0(2stepverification,U,da1,V,W)* -> .
+	Given clause: 554[0:Res:57.1,27.0] || SkP1(2stepverification,U,da1,V,W)* -> .
+	Given clause: 555[0:Res:60.1,27.0] || SkP2(2stepverification,U,da1,V,W)* -> .
+	Given clause: 584[0:Res:54.1,26.0] || SkP0(2stepverification,U,da2,V,W)* -> .
+	Given clause: 315[0:MRR:115.0,309.0] ||  -> L1_B(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 585[0:Res:57.1,26.0] || SkP1(2stepverification,U,da2,V,W)* -> .
+	Given clause: 586[0:Res:60.1,26.0] || SkP2(2stepverification,U,da2,V,W)* -> .
+	Given clause: 370[0:Res:53.1,33.0] || SkP0(usersemailpage,U,V,W,da1)* -> .
+	Given clause: 371[0:Res:56.1,33.0] || SkP1(usersemailpage,U,V,W,da1)* -> .
+	Given clause: 308[0:MRR:99.0,307.0] ||  -> L3_E(sent(uc,s,pair(email,password)),da1)*.
+	Given clause: 372[0:Res:59.1,33.0] || SkP2(usersemailpage,U,V,W,da1)* -> .
+	Given clause: 401[0:Res:53.1,32.0] || SkP0(usersemailpage,U,V,W,da2)* -> .
+	Given clause: 402[0:Res:56.1,32.0] || SkP1(usersemailpage,U,V,W,da2)* -> .
+	Given clause: 403[0:Res:59.1,32.0] || SkP2(usersemailpage,U,V,W,da2)* -> .
+	Given clause: 309[0:MRR:113.0,308.0] ||  -> L2_E(sent(uc,s,pair(email,password)),da2)*.
+	Given clause: 432[0:Res:53.1,31.0] || SkP0(authenticationcode,U,V,W,da2)* -> .
+	Given clause: 433[0:Res:56.1,31.0] || SkP1(authenticationcode,U,V,W,da2)* -> .
+	Given clause: 434[0:Res:59.1,31.0] || SkP2(authenticationcode,U,V,W,da2)* -> .
+	Given clause: 463[0:Res:53.1,30.0] || SkP0(authenticationcode,U,V,W,da1)* -> .
+	Given clause: 316[0:MRR:114.0,309.0] ||  -> L1_E(sent(uc,s,pair(email,password)),dy)*.
+	Given clause: 464[0:Res:56.1,30.0] || SkP1(authenticationcode,U,V,W,da1)* -> .
+	Given clause: 465[0:Res:59.1,30.0] || SkP2(authenticationcode,U,V,W,da1)* -> .
+	Given clause: 494[0:Res:53.1,29.0] || SkP0(codemessage,U,V,W,da1)* -> .
+	Given clause: 495[0:Res:56.1,29.0] || SkP1(codemessage,U,V,W,da1)* -> .
+	Given clause: 51[0:Inp] || KnowsEncr(dy,encr(pair(email,password),keys))* -> .
+	Given clause: 496[0:Res:59.1,29.0] || SkP2(codemessage,U,V,W,da1)* -> .
+	Given clause: 525[0:Res:53.1,28.0] || SkP0(codemessage,U,V,W,da3)* -> .
+	Given clause: 526[0:Res:56.1,28.0] || SkP1(codemessage,U,V,W,da3)* -> .
+	Given clause: 527[0:Res:59.1,28.0] || SkP2(codemessage,U,V,W,da3)* -> .
+	Given clause: 60[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(W,U).
+	Given clause: 556[0:Res:53.1,27.0] || SkP0(2stepverification,U,V,W,da1)* -> .
+	Given clause: 557[0:Res:56.1,27.0] || SkP1(2stepverification,U,V,W,da1)* -> .
+	Given clause: 558[0:Res:59.1,27.0] || SkP2(2stepverification,U,V,W,da1)* -> .
+	Given clause: 587[0:Res:53.1,26.0] || SkP0(2stepverification,U,V,W,da2)* -> .
+	Given clause: 59[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(Y,U).
+	Given clause: 588[0:Res:56.1,26.0] || SkP1(2stepverification,U,V,W,da2)* -> .
+	Given clause: 589[0:Res:59.1,26.0] || SkP2(2stepverification,U,V,W,da2)* -> .
+	Given clause: 376[0:Res:274.1,33.0] || SkP0(U,usersemailpage,da1,V,W)* -> .
+	Given clause: 377[0:Res:273.1,33.0] || SkP1(U,usersemailpage,da1,V,W)* -> .
+	Given clause: 58[0:Inp] || SkP2(U,V,W,X,Y)* -> Knows(Y,V).
+	Given clause: 378[0:Res:272.1,33.0] || SkP2(U,usersemailpage,da1,V,W)* -> .
+	Given clause: 407[0:Res:274.1,32.0] || SkP0(U,usersemailpage,da2,V,W)* -> .
+	Given clause: 408[0:Res:273.1,32.0] || SkP1(U,usersemailpage,da2,V,W)* -> .
+	Given clause: 409[0:Res:272.1,32.0] || SkP2(U,usersemailpage,da2,V,W)* -> .
+	Given clause: 57[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(W,U).
+	Given clause: 438[0:Res:274.1,31.0] || SkP0(U,authenticationcode,da2,V,W)* -> .
+	Given clause: 439[0:Res:273.1,31.0] || SkP1(U,authenticationcode,da2,V,W)* -> .
+	Given clause: 440[0:Res:272.1,31.0] || SkP2(U,authenticationcode,da2,V,W)* -> .
+	Given clause: 469[0:Res:274.1,30.0] || SkP0(U,authenticationcode,da1,V,W)* -> .
+	Given clause: 56[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(Y,U).
+	Given clause: 470[0:Res:273.1,30.0] || SkP1(U,authenticationcode,da1,V,W)* -> .
+	Given clause: 471[0:Res:272.1,30.0] || SkP2(U,authenticationcode,da1,V,W)* -> .
+	Given clause: 500[0:Res:274.1,29.0] || SkP0(U,codemessage,da1,V,W)* -> .
+	Given clause: 501[0:Res:273.1,29.0] || SkP1(U,codemessage,da1,V,W)* -> .
+	Given clause: 55[0:Inp] || SkP1(U,V,W,X,Y)* -> Knows(Y,V).
+	Given clause: 502[0:Res:272.1,29.0] || SkP2(U,codemessage,da1,V,W)* -> .
+	Given clause: 531[0:Res:274.1,28.0] || SkP0(U,codemessage,da3,V,W)* -> .
+	Given clause: 532[0:Res:273.1,28.0] || SkP1(U,codemessage,da3,V,W)* -> .
+	Given clause: 533[0:Res:272.1,28.0] || SkP2(U,codemessage,da3,V,W)* -> .
+	Given clause: 54[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(W,U).
+	Given clause: 562[0:Res:274.1,27.0] || SkP0(U,2stepverification,da1,V,W)* -> .
+	Given clause: 563[0:Res:273.1,27.0] || SkP1(U,2stepverification,da1,V,W)* -> .
+	Given clause: 564[0:Res:272.1,27.0] || SkP2(U,2stepverification,da1,V,W)* -> .
+	Given clause: 593[0:Res:274.1,26.0] || SkP0(U,2stepverification,da2,V,W)* -> .
+	Given clause: 53[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(Y,U).
+	Given clause: 594[0:Res:273.1,26.0] || SkP1(U,2stepverification,da2,V,W)* -> .
+	Given clause: 595[0:Res:272.1,26.0] || SkP2(U,2stepverification,da2,V,W)* -> .
+	Given clause: 373[0:Res:52.1,33.0] || SkP0(U,usersemailpage,V,W,da1)* -> .
+	Given clause: 374[0:Res:55.1,33.0] || SkP1(U,usersemailpage,V,W,da1)* -> .
+	Given clause: 52[0:Inp] || SkP0(U,V,W,X,Y)* -> Knows(Y,V).
+	Given clause: 375[0:Res:58.1,33.0] || SkP2(U,usersemailpage,V,W,da1)* -> .
+	Given clause: 404[0:Res:52.1,32.0] || SkP0(U,usersemailpage,V,W,da2)* -> .
+	Given clause: 405[0:Res:55.1,32.0] || SkP1(U,usersemailpage,V,W,da2)* -> .
+	Given clause: 406[0:Res:58.1,32.0] || SkP2(U,usersemailpage,V,W,da2)* -> .
+	Given clause: 272[0:MRR:98.0,60.1] || SkP2(U,V,W,X,Y)* -> Knows(W,V).
+	Given clause: 435[0:Res:52.1,31.0] || SkP0(U,authenticationcode,V,W,da2)* -> .
+	Given clause: 436[0:Res:55.1,31.0] || SkP1(U,authenticationcode,V,W,da2)* -> .
+	Given clause: 437[0:Res:58.1,31.0] || SkP2(U,authenticationcode,V,W,da2)* -> .
+	Given clause: 466[0:Res:52.1,30.0] || SkP0(U,authenticationcode,V,W,da1)* -> .
+	Given clause: 273[0:MRR:97.0,57.1] || SkP1(U,V,W,X,Y)* -> Knows(W,V).
+	Given clause: 467[0:Res:55.1,30.0] || SkP1(U,authenticationcode,V,W,da1)* -> .
+	Given clause: 468[0:Res:58.1,30.0] || SkP2(U,authenticationcode,V,W,da1)* -> .
+	Given clause: 497[0:Res:52.1,29.0] || SkP0(U,codemessage,V,W,da1)* -> .
+	Given clause: 498[0:Res:55.1,29.0] || SkP1(U,codemessage,V,W,da1)* -> .
+	Given clause: 274[0:MRR:96.0,54.1] || SkP0(U,V,W,X,Y)* -> Knows(W,V).
+	Given clause: 499[0:Res:58.1,29.0] || SkP2(U,codemessage,V,W,da1)* -> .
+	Given clause: 528[0:Res:52.1,28.0] || SkP0(U,codemessage,V,W,da3)* -> .
+	Given clause: 529[0:Res:55.1,28.0] || SkP1(U,codemessage,V,W,da3)* -> .
+	Given clause: 530[0:Res:58.1,28.0] || SkP2(U,codemessage,V,W,da3)* -> .
+	Given clause: 64[0:Inp] || SkP1(U,V,W,X,Y)* -> L2_Sender(X,W,U).
+	Given clause: 559[0:Res:52.1,27.0] || SkP0(U,2stepverification,V,W,da1)* -> .
+	Given clause: 560[0:Res:55.1,27.0] || SkP1(U,2stepverification,V,W,da1)* -> .
+	Given clause: 561[0:Res:58.1,27.0] || SkP2(U,2stepverification,V,W,da1)* -> .
+	Given clause: 590[0:Res:52.1,26.0] || SkP0(U,2stepverification,V,W,da2)* -> .
+	Given clause: 63[0:Inp] || SkP1(U,V,W,X,Y)* -> L2_Sender(X,W,V).
+	Given clause: 591[0:Res:55.1,26.0] || SkP1(U,2stepverification,V,W,da2)* -> .
+	Given clause: 592[0:Res:58.1,26.0] || SkP2(U,2stepverification,V,W,da2)* -> .
+	Given clause: 381[0:Res:67.2,33.0] Agent(da1) || KnowsPair(da1,pair(usersemailpage,U))* -> .
+	Given clause: 728[0:SSi:727.0,10.0,9.0] || KnowsPair(da1,pair(usersemailpage,U))* -> .
+	Given clause: 62[0:Inp] || SkP0(U,V,W,X,Y)* -> L3_Sender(X,W,U).
+	Given clause: 412[0:Res:67.2,32.0] Agent(da2) || KnowsPair(da2,pair(usersemailpage,U))* -> .
+	Given clause: 730[0:SSi:729.0,12.0,11.0] || KnowsPair(da2,pair(usersemailpage,U))* -> .
+	Given clause: 443[0:Res:67.2,31.0] Agent(da2) || KnowsPair(da2,pair(authenticationcode,U))* -> .
+	Given clause: 732[0:SSi:731.0,12.0,11.0] || KnowsPair(da2,pair(authenticationcode,U))* -> .
+	Given clause: 61[0:Inp] || SkP0(U,V,W,X,Y)* -> L3_Sender(X,W,V).
+	Given clause: 474[0:Res:67.2,30.0] Agent(da1) || KnowsPair(da1,pair(authenticationcode,U))* -> .
+	Given clause: 734[0:SSi:733.0,10.0,9.0] || KnowsPair(da1,pair(authenticationcode,U))* -> .
+	Given clause: 505[0:Res:67.2,29.0] Agent(da1) || KnowsPair(da1,pair(codemessage,U))* -> .
+	Given clause: 736[0:SSi:735.0,10.0,9.0] || KnowsPair(da1,pair(codemessage,U))* -> .
+	Given clause: 66[0:Inp] || SkP2(U,V,W,X,Y)* -> L1_Sender(X,W,U).
+	Given clause: 536[0:Res:67.2,28.0] Agent(da3) || KnowsPair(da3,pair(codemessage,U))* -> .
+	Given clause: 738[0:SSi:737.0,8.0,7.0] || KnowsPair(da3,pair(codemessage,U))* -> .
+	Given clause: 567[0:Res:67.2,27.0] Agent(da1) || KnowsPair(da1,pair(2stepverification,U))* -> .
+	Given clause: 740[0:SSi:739.0,10.0,9.0] || KnowsPair(da1,pair(2stepverification,U))* -> .
+	Given clause: 65[0:Inp] || SkP2(U,V,W,X,Y)* -> L1_Sender(X,W,V).
+	Given clause: 598[0:Res:67.2,26.0] Agent(da2) || KnowsPair(da2,pair(2stepverification,U))* -> .
+	Given clause: 742[0:SSi:741.0,12.0,11.0] || KnowsPair(da2,pair(2stepverification,U))* -> .
+	Given clause: 380[0:Res:68.2,33.0] Agent(da1) || KnowsPair(da1,pair(U,usersemailpage))* -> .
+	Given clause: 744[0:SSi:743.0,10.0,9.0] || KnowsPair(da1,pair(U,usersemailpage))* -> .
+	Given clause: 68[0:Inp] Agent(U) || KnowsPair(U,pair(V,W))* -> Knows(U,W).
+	Given clause: 746[0:SSi:745.0,6.0,5.0] ||  -> Knows(uc,password)*.
+	Given clause: 411[0:Res:68.2,32.0] Agent(da2) || KnowsPair(da2,pair(U,usersemailpage))* -> .
+	Given clause: 748[0:SSi:747.0,12.0,11.0] || KnowsPair(da2,pair(U,usersemailpage))* -> .
+	Given clause: 442[0:Res:68.2,31.0] Agent(da2) || KnowsPair(da2,pair(U,authenticationcode))* -> .
+	Given clause: 67[0:Inp] Agent(U) || KnowsPair(U,pair(V,W))* -> Knows(U,V).
+	Given clause: 752[0:SSi:751.0,6.0,5.0] ||  -> Knows(uc,email)*.
+	Given clause: 750[0:SSi:749.0,12.0,11.0] || KnowsPair(da2,pair(U,authenticationcode))* -> .
+	Given clause: 473[0:Res:68.2,30.0] Agent(da1) || KnowsPair(da1,pair(U,authenticationcode))* -> .
+	Given clause: 754[0:SSi:753.0,10.0,9.0] || KnowsPair(da1,pair(U,authenticationcode))* -> .
+	Given clause: 106[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W)*+ -> Knows(U,W)*.
+	Given clause: 504[0:Res:68.2,29.0] Agent(da1) || KnowsPair(da1,pair(U,codemessage))* -> .
+	Given clause: 764[0:SSi:763.0,10.0,9.0] || KnowsPair(da1,pair(U,codemessage))* -> .
+	Given clause: 535[0:Res:68.2,28.0] Agent(da3) || KnowsPair(da3,pair(U,codemessage))* -> .
+	Given clause: 766[0:SSi:765.0,8.0,7.0] || KnowsPair(da3,pair(U,codemessage))* -> .
+	Given clause: 100[0:Inp] Agent(U) || Knows(U,V) Knows(U,W) -> KnowsPair(U,pair(V,W))*.
+	Given clause: 786[0:SSi:767.0,34.0,14.0,13.1] || Knows(dy,email)* Knows(dy,password) -> .
+	Given clause: 787[0:SSi:768.0,34.0,12.0,11.1] || Knows(da2,email)* Knows(da2,password) -> .
+	Given clause: 788[0:SSi:769.0,34.0,10.0,9.1] || Knows(da1,email)* Knows(da1,password) -> .
+	Given clause: 566[0:Res:68.2,27.0] Agent(da1) || KnowsPair(da1,pair(U,2stepverification))* -> .
+	Given clause: 111[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L2_Sender(V,U,W)*.
+	Given clause: 804[0:SSi:803.0,10.0,9.0] || KnowsPair(da1,pair(U,2stepverification))* -> .
+	Given clause: 597[0:Res:68.2,26.0] Agent(da2) || KnowsPair(da2,pair(U,2stepverification))* -> .
+	Given clause: 808[0:SSi:807.0,12.0,11.0] || KnowsPair(da2,pair(U,2stepverification))* -> .
+	Given clause: 382[0:Res:106.4,33.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,usersemailpage)* -> .
+	Given clause: 110[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L3_Sender(V,U,W)*.
+	Given clause: 413[0:Res:106.4,32.0] Attacker(U) Honest(da2) Agent(da2) || Knows(U,usersemailpage)* -> .
+	Given clause: 444[0:Res:106.4,31.0] Attacker(U) Honest(da2) Agent(da2) || Knows(U,authenticationcode)* -> .
+	Given clause: 475[0:Res:106.4,30.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,authenticationcode)* -> .
+	Given clause: 506[0:Res:106.4,29.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,codemessage)* -> .
+	Given clause: 112[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L1_Sender(V,U,W)*.
+	Given clause: 537[0:Res:106.4,28.0] Attacker(U) Honest(da3) Agent(da3) || Knows(U,codemessage)* -> .
+	Given clause: 568[0:Res:106.4,27.0] Attacker(U) Honest(da1) Agent(da1) || Knows(U,2stepverification)* -> .
+	Given clause: 599[0:Res:106.4,26.0] Attacker(U) Honest(da2) Agent(da2) || Knows(U,2stepverification)* -> .
+	Given clause: 379[0:Res:122.4,33.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(usersemailpage,U))* -> .
+	Given clause: 123[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L3_I(sent(V,U,W),V)*.
+	Given clause: 812[0:SSi:811.1,10.0,9.0] Key(U) || Knows(da1,U) KnowsEncr(da1,encr(usersemailpage,U))* -> .
+	Given clause: 410[0:Res:122.4,32.0] Key(U) Agent(da2) || Knows(da2,U) KnowsEncr(da2,encr(usersemailpage,U))* -> .
+	Given clause: 814[0:SSi:813.1,12.0,11.0] Key(U) || Knows(da2,U) KnowsEncr(da2,encr(usersemailpage,U))* -> .
+	Given clause: 441[0:Res:122.4,31.0] Key(U) Agent(da2) || Knows(da2,U) KnowsEncr(da2,encr(authenticationcode,U))* -> .
+	Given clause: 124[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L2_I(sent(V,U,W),V)*.
+	Given clause: 816[0:SSi:815.1,12.0,11.0] Key(U) || Knows(da2,U) KnowsEncr(da2,encr(authenticationcode,U))* -> .
+	Given clause: 472[0:Res:122.4,30.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(authenticationcode,U))* -> .
+	Given clause: 818[0:SSi:817.1,10.0,9.0] Key(U) || Knows(da1,U) KnowsEncr(da1,encr(authenticationcode,U))* -> .
+	Given clause: 503[0:Res:122.4,29.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(codemessage,U))* -> .
+	Given clause: 125[0:Inp] Honest(U) Agent(U) Attacker(V) || Knows(V,W) -> L1_I(sent(V,U,W),V)*.
+	Given clause: 820[0:SSi:819.1,10.0,9.0] Key(U) || Knows(da1,U) KnowsEncr(da1,encr(codemessage,U))* -> .
+	Given clause: 534[0:Res:122.4,28.0] Key(U) Agent(da3) || Knows(da3,U) KnowsEncr(da3,encr(codemessage,U))* -> .
+	Given clause: 822[0:SSi:821.1,8.0,7.0] Key(U) || Knows(da3,U) KnowsEncr(da3,encr(codemessage,U))* -> .
+	Given clause: 565[0:Res:122.4,27.0] Key(U) Agent(da1) || Knows(da1,U) KnowsEncr(da1,encr(2stepverification,U))* -> .
+	Given clause: 121[0:Inp] Key(U) Agent(V) || Knows(V,U) Knows(V,W) -> KnowsEncr(V,encr(W,U))*.
+	Given clause: 837[0:SSi:825.1,825.0,34.0,14.0,13.0,15.1] || Knows(dy,keys)* Knows(dy,usersemailpage) -> .
+	Given clause: 838[0:SSi:826.1,826.0,34.0,14.0,13.0,15.1] || Knows(dy,keys)* Knows(dy,authenticationcode) -> .
+	Given clause: 839[0:SSi:827.1,827.0,34.0,14.0,13.0,15.1] || Knows(dy,keys)* Knows(dy,2stepverification) -> .
+	Given clause: 840[0:SSi:828.1,828.0,34.0,14.0,13.0,15.1] || Knows(dy,keys)* Knows(dy,emailloginpage) -> .
+	Given clause: 122[0:Inp] Key(U) Agent(V) || Knows(V,U) KnowsEncr(V,encr(W,U))* -> Knows(V,W).
+	Given clause: 841[0:SSi:829.1,829.0,34.0,14.0,13.0,15.1] || Knows(dy,keys) Knows(dy,emailserverurl)* -> .
+	Given clause: 856[0:SSi:854.1,854.0,6.0,5.0,15.0] || Knows(uc,keys) -> Knows(uc,pair(email,password))*.
+	Given clause: 842[0:SSi:830.1,830.0,34.0,14.0,13.0,15.1] || Knows(dy,keys) Knows(dy,pair(email,password))* -> .
+	Given clause: 824[0:SSi:823.1,10.0,9.0] Key(U) || Knows(da1,U) KnowsEncr(da1,encr(2stepverification,U))* -> .
+	Given clause: 126[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X))*+ -> KnowsPair(U,pair(W,X))*.
+	Given clause: 596[0:Res:122.4,26.0] Key(U) Agent(da2) || Knows(da2,U) KnowsEncr(da2,encr(2stepverification,U))* -> .
+	Given clause: 864[0:SSi:863.1,12.0,11.0] Key(U) || Knows(da2,U) KnowsEncr(da2,encr(2stepverification,U))* -> .
+	Given clause: 133[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L2_Sender(V,U,pair(W,X))*.
+	Given clause: 134[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L3_Sender(V,U,pair(W,X))*.
+	Given clause: 132[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L1_Sender(V,U,pair(W,X))*.
+	Given clause: 862[0:SSi:861.0,34.1] Agent(U) Honest(U) Attacker(V) || Knows(V,W)*+ Knows(V,X)* -> KnowsPair(U,pair(W,X))*.
+	Given clause: 615[0:MRR:608.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) L1_F(sent(V,U,2stepverification),da2)* -> .
+	Given clause: 622[0:MRR:577.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(2stepverification)) L1_F(sent(V,U,2stepverification),da1)* -> .
+	Given clause: 629[0:MRR:546.4,7.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) L1_F(sent(V,U,codemessage),da3)* -> .
+	Given clause: 140[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L3_I(sent(V,U,pair(W,X)),V)*.
+	Given clause: 636[0:MRR:515.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(codemessage)) L1_F(sent(V,U,codemessage),da1)* -> .
+	Given clause: 643[0:MRR:484.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) L1_F(sent(V,U,authenticationcode),da1)* -> .
+	Given clause: 650[0:MRR:453.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(authenticationcode)) L1_F(sent(V,U,authenticationcode),da2)* -> .
+	Given clause: 657[0:MRR:422.4,11.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) L1_F(sent(V,U,usersemailpage),da2)* -> .
+	Given clause: 139[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L2_I(sent(V,U,pair(W,X)),V)*.
+	Given clause: 664[0:MRR:391.4,9.0] Agent(U) Honest(U) Honest(V) Agent(V) || Function(hash(usersemailpage)) L1_F(sent(V,U,usersemailpage),da1)* -> .
+	Given clause: 618[0:MRR:605.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L3_B(sent(V,U,2stepverification),da2)* -> .
+	Given clause: 625[0:MRR:574.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L3_B(sent(V,U,2stepverification),da1)* -> .
+	Given clause: 632[0:MRR:543.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L3_B(sent(V,U,codemessage),da3)* -> .
+	Given clause: 138[0:Inp] Agent(U) Honest(U) Attacker(V) || KnowsPair(V,pair(W,X)) -> L1_I(sent(V,U,pair(W,X)),V)*.
+	Given clause: 639[0:MRR:512.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L3_B(sent(V,U,codemessage),da1)* -> .
+	Given clause: 646[0:MRR:481.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L3_B(sent(V,U,authenticationcode),da1)* -> .
+	Given clause: 653[0:MRR:450.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,authenticationcode) L3_B(sent(V,U,authenticationcode),da2)* -> .
+	Given clause: 660[0:MRR:419.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L3_B(sent(V,U,usersemailpage),da2)* -> .
+	Given clause: 142[0:Inp] Key(U) Agent(V) || Knows(V,U) KnowsPair(V,pair(W,X)) -> KnowsEncr(V,encr(pair(W,X),U))*.
+	Given clause: 878[0:Obv:877.4] Key(U) Agent(V) || KnowsPair(V,pair(W,X))*+ Knows(V,U)* -> Knows(V,pair(W,X)).
+	Given clause: 881[0:SSi:879.1,6.0,5.0] Key(U) || Knows(uc,U)*+ -> Knows(uc,pair(email,password))*.
+	Given clause: 667[0:MRR:388.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,usersemailpage) L3_B(sent(V,U,usersemailpage),da1)* -> .
+	Given clause: 617[0:MRR:606.4,11.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L2_B(sent(V,U,2stepverification),da2)* -> .
+	Given clause: 141[0:Inp] Key(U) Agent(V) || Knows(V,U) KnowsEncr(V,encr(pair(W,X),U))* -> KnowsPair(V,pair(W,X)).
+	Given clause: 891[0:Obv:889.4] Key(U) Agent(V) || Knows(V,pair(W,X))+ Knows(V,U)* -> KnowsPair(V,pair(W,X))*.
+	Given clause: 624[0:MRR:575.4,9.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,2stepverification) L2_B(sent(V,U,2stepverification),da1)* -> .
+	Given clause: 631[0:MRR:544.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L2_B(sent(V,U,codemessage),da3)* -> .
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: ceremony3.dfg 
+SPASS derived 408 clauses, backtracked 0 clauses, performed 0 splits and kept 593 clauses.
+SPASS allocated 53226 KBytes.
+SPASS spent	0:00:00.08 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.02 for the reduction.
+
+
+Here is a proof with depth 2, length 98 :
+1[0:Inp] ||  -> Agent(s)*.
+2[0:Inp] ||  -> Honest(s)*.
+3[0:Inp] ||  -> Agent(up)*.
+4[0:Inp] ||  -> Honest(up)*.
+7[0:Inp] ||  -> Attacker(da3)*.
+19[0:Inp] ||  -> Knows(s,codemessage)*.
+28[0:Inp] || Knows(da3,codemessage)* -> .
+49[0:Inp] ||  -> L3_E(sent(uc,s,emailserverurl),da1)*.
+69[0:Inp] || L3_E(sent(uc,s,emailserverurl),da1) -> L2_E(sent(uc,s,emailserverurl),da2)*.
+70[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_E(sent(uc,s,emailserverurl),dy)*.
+71[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_B(sent(uc,s,emailserverurl),dy)*.
+72[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_S(sent(uc,s,emailserverurl),dy)*.
+73[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_I(sent(uc,s,emailserverurl),dy)*.
+74[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_C(sent(uc,s,emailserverurl),dy)*.
+75[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_O(sent(uc,s,emailserverurl),dy)*.
+76[0:Inp] || L2_E(sent(uc,s,emailserverurl),da2) -> L1_F(sent(uc,s,emailserverurl),dy)*.
+77[0:Inp] || L2_E(sent(s,uc,emailloginpage),da2)* -> L3_E(sent(s,uc,emailloginpage),da1).
+78[0:Inp] || L2_E(sent(s,uc,2stepverification),da2)* -> L3_E(sent(s,uc,2stepverification),da1).
+80[0:Inp] || L3_E(sent(s,uc,2stepverification),da1) -> L2_B(sent(s,up,codemessage),da3)*.
+99[0:Inp] || L3_E(sent(s,uc,emailloginpage),da1) -> L3_E(sent(uc,s,pair(email,password)),da1)*.
+113[0:Inp] || L3_E(sent(uc,s,pair(email,password)),da1) -> L2_E(sent(uc,s,pair(email,password)),da2)*.
+114[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_E(sent(uc,s,pair(email,password)),dy)*.
+115[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_B(sent(uc,s,pair(email,password)),dy)*.
+116[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_S(sent(uc,s,pair(email,password)),dy)*.
+117[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_I(sent(uc,s,pair(email,password)),dy)*.
+118[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_C(sent(uc,s,pair(email,password)),dy)*.
+119[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_O(sent(uc,s,pair(email,password)),dy)*.
+120[0:Inp] || L2_E(sent(uc,s,pair(email,password)),da2) -> L1_F(sent(uc,s,pair(email,password)),dy)*.
+155[0:Inp] Attacker(U) Honest(V) Agent(V) Agent(W) Honest(W) || Knows(W,X) L2_B(sent(W,V,X),U)* -> Knows(U,X).
+248[0:Inp] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy) L1_S(sent(s,uc,2stepverification),dy) L1_I(sent(s,uc,2stepverification),dy) L1_C(sent(s,uc,2stepverification),dy) L1_O(sent(s,uc,2stepverification),dy) L1_F(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+249[0:Inp] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy) L1_S(sent(s,uc,emailloginpage),dy) L1_I(sent(s,uc,emailloginpage),dy) L1_C(sent(s,uc,emailloginpage),dy) L1_O(sent(s,uc,emailloginpage),dy) L1_F(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+250[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy) -> L1_F(sent(s,uc,emailloginpage),dy)*.
+251[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_O(sent(s,uc,emailloginpage),dy).
+252[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_C(sent(s,uc,emailloginpage),dy).
+253[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_I(sent(s,uc,emailloginpage),dy).
+254[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_S(sent(s,uc,emailloginpage),dy).
+255[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_B(sent(s,uc,emailloginpage),dy).
+256[0:Inp] || L1_E(sent(uc,s,emailserverurl),dy) L1_B(sent(uc,s,emailserverurl),dy) L1_S(sent(uc,s,emailserverurl),dy) L1_I(sent(uc,s,emailserverurl),dy) L1_C(sent(uc,s,emailserverurl),dy) L1_O(sent(uc,s,emailserverurl),dy) L1_F(sent(uc,s,emailserverurl),dy)* -> L1_E(sent(s,uc,emailloginpage),dy).
+257[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_F(sent(s,uc,2stepverification),dy).
+258[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_O(sent(s,uc,2stepverification),dy).
+259[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_C(sent(s,uc,2stepverification),dy).
+260[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_I(sent(s,uc,2stepverification),dy).
+261[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_S(sent(s,uc,2stepverification),dy).
+262[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_B(sent(s,uc,2stepverification),dy).
+263[0:Inp] || L1_E(sent(uc,s,pair(email,password)),dy) L1_B(sent(uc,s,pair(email,password)),dy) L1_S(sent(uc,s,pair(email,password)),dy) L1_I(sent(uc,s,pair(email,password)),dy) L1_C(sent(uc,s,pair(email,password)),dy) L1_O(sent(uc,s,pair(email,password)),dy) L1_F(sent(uc,s,pair(email,password)),dy)* -> L1_E(sent(s,uc,2stepverification),dy).
+264[0:MRR:69.0,49.0] ||  -> L2_E(sent(uc,s,emailserverurl),da2)*.
+265[0:MRR:76.0,264.0] ||  -> L1_F(sent(uc,s,emailserverurl),dy)*.
+266[0:MRR:75.0,264.0] ||  -> L1_O(sent(uc,s,emailserverurl),dy)*.
+267[0:MRR:74.0,264.0] ||  -> L1_C(sent(uc,s,emailserverurl),dy)*.
+268[0:MRR:73.0,264.0] ||  -> L1_I(sent(uc,s,emailserverurl),dy)*.
+269[0:MRR:72.0,264.0] ||  -> L1_S(sent(uc,s,emailserverurl),dy)*.
+270[0:MRR:71.0,264.0] ||  -> L1_B(sent(uc,s,emailserverurl),dy)*.
+271[0:MRR:70.0,264.0] ||  -> L1_E(sent(uc,s,emailserverurl),dy)*.
+293[0:MRR:250.0,250.1,250.2,250.3,250.4,250.5,250.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_F(sent(s,uc,emailloginpage),dy)*.
+294[0:MRR:249.6,293.0] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy) L1_S(sent(s,uc,emailloginpage),dy) L1_I(sent(s,uc,emailloginpage),dy) L1_C(sent(s,uc,emailloginpage),dy) L1_O(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+295[0:MRR:251.0,251.1,251.2,251.3,251.4,251.5,251.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_O(sent(s,uc,emailloginpage),dy)*.
+296[0:MRR:294.5,295.0] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy) L1_S(sent(s,uc,emailloginpage),dy) L1_I(sent(s,uc,emailloginpage),dy) L1_C(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+297[0:MRR:252.0,252.1,252.2,252.3,252.4,252.5,252.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_C(sent(s,uc,emailloginpage),dy)*.
+298[0:MRR:296.4,297.0] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy) L1_S(sent(s,uc,emailloginpage),dy) L1_I(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+299[0:MRR:253.0,253.1,253.2,253.3,253.4,253.5,253.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_I(sent(s,uc,emailloginpage),dy)*.
+300[0:MRR:298.3,299.0] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy) L1_S(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+301[0:MRR:254.0,254.1,254.2,254.3,254.4,254.5,254.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_S(sent(s,uc,emailloginpage),dy)*.
+302[0:MRR:300.2,301.0] || L1_E(sent(s,uc,emailloginpage),dy) L1_B(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+303[0:MRR:255.0,255.1,255.2,255.3,255.4,255.5,255.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_B(sent(s,uc,emailloginpage),dy)*.
+304[0:MRR:302.1,303.0] || L1_E(sent(s,uc,emailloginpage),dy)* -> L2_E(sent(s,uc,emailloginpage),da2).
+305[0:MRR:256.0,256.1,256.2,256.3,256.4,256.5,256.6,271.0,270.0,269.0,268.0,267.0,266.0,265.0] ||  -> L1_E(sent(s,uc,emailloginpage),dy)*.
+306[0:MRR:304.0,305.0] ||  -> L2_E(sent(s,uc,emailloginpage),da2)*.
+307[0:MRR:77.0,306.0] ||  -> L3_E(sent(s,uc,emailloginpage),da1)*.
+308[0:MRR:99.0,307.0] ||  -> L3_E(sent(uc,s,pair(email,password)),da1)*.
+309[0:MRR:113.0,308.0] ||  -> L2_E(sent(uc,s,pair(email,password)),da2)*.
+310[0:MRR:120.0,309.0] ||  -> L1_F(sent(uc,s,pair(email,password)),dy)*.
+311[0:MRR:119.0,309.0] ||  -> L1_O(sent(uc,s,pair(email,password)),dy)*.
+312[0:MRR:118.0,309.0] ||  -> L1_C(sent(uc,s,pair(email,password)),dy)*.
+313[0:MRR:117.0,309.0] ||  -> L1_I(sent(uc,s,pair(email,password)),dy)*.
+314[0:MRR:116.0,309.0] ||  -> L1_S(sent(uc,s,pair(email,password)),dy)*.
+315[0:MRR:115.0,309.0] ||  -> L1_B(sent(uc,s,pair(email,password)),dy)*.
+316[0:MRR:114.0,309.0] ||  -> L1_E(sent(uc,s,pair(email,password)),dy)*.
+317[0:MRR:257.0,257.1,257.2,257.3,257.4,257.5,257.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_F(sent(s,uc,2stepverification),dy)*.
+318[0:MRR:248.6,317.0] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy) L1_S(sent(s,uc,2stepverification),dy) L1_I(sent(s,uc,2stepverification),dy) L1_C(sent(s,uc,2stepverification),dy) L1_O(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+319[0:MRR:258.0,258.1,258.2,258.3,258.4,258.5,258.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_O(sent(s,uc,2stepverification),dy)*.
+320[0:MRR:318.5,319.0] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy) L1_S(sent(s,uc,2stepverification),dy) L1_I(sent(s,uc,2stepverification),dy) L1_C(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+321[0:MRR:259.0,259.1,259.2,259.3,259.4,259.5,259.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_C(sent(s,uc,2stepverification),dy)*.
+322[0:MRR:320.4,321.0] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy) L1_S(sent(s,uc,2stepverification),dy) L1_I(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+323[0:MRR:260.0,260.1,260.2,260.3,260.4,260.5,260.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_I(sent(s,uc,2stepverification),dy)*.
+324[0:MRR:322.3,323.0] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy) L1_S(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+325[0:MRR:261.0,261.1,261.2,261.3,261.4,261.5,261.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_S(sent(s,uc,2stepverification),dy)*.
+326[0:MRR:324.2,325.0] || L1_E(sent(s,uc,2stepverification),dy) L1_B(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+327[0:MRR:262.0,262.1,262.2,262.3,262.4,262.5,262.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_B(sent(s,uc,2stepverification),dy)*.
+328[0:MRR:326.1,327.0] || L1_E(sent(s,uc,2stepverification),dy)* -> L2_E(sent(s,uc,2stepverification),da2).
+329[0:MRR:263.0,263.1,263.2,263.3,263.4,263.5,263.6,316.0,315.0,314.0,313.0,312.0,311.0,310.0] ||  -> L1_E(sent(s,uc,2stepverification),dy)*.
+330[0:MRR:328.0,329.0] ||  -> L2_E(sent(s,uc,2stepverification),da2)*.
+331[0:MRR:78.0,330.0] ||  -> L3_E(sent(s,uc,2stepverification),da1)*.
+337[0:MRR:80.0,331.0] ||  -> L2_B(sent(s,up,codemessage),da3)*.
+544[0:Res:155.7,28.0] Honest(U) Agent(U) Agent(V) Honest(V) Attacker(da3) || L2_B(sent(U,V,codemessage),da3)* Knows(U,codemessage) -> .
+631[0:MRR:544.4,7.0] Honest(U) Agent(U) Agent(V) Honest(V) || Knows(V,codemessage) L2_B(sent(V,U,codemessage),da3)* -> .
+893[0:Res:337.0,631.5] Honest(up) Agent(up) Agent(s) Honest(s) || Knows(s,codemessage)* -> .
+894[0:SSi:893.3,893.2,893.1,893.0,2.0,1.0,2.0,1.0,4.0,3.0,4.0,3.0] || Knows(s,codemessage)* -> .
+895[0:MRR:894.0,19.0] ||  -> .
+Formulae used in the proof : agent_s honest_s agent_up honest_up attacker_da3 agent_s_knows_codemessage attacker_da3_knows_codemessage step1 step2 step3 step6 step12 step13 step7 step8 step9 Block_L2 step11 step5 step4 step10
+
+--------------------------SPASS-STOP------------------------------

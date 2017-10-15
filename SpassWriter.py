@@ -24,6 +24,7 @@ class SpassWriter(object):
         self.text += self.peers_forms + self.att_forms + self.keys_forms + self.knows + "\n\n\n"
         self.generate_steps()
 
+
         self.spass = self.spass.replace("%DECLARATIONS AND STEPS TODO", self.text)
         self.spass = self.spass.replace("%CONJECTURES TODO", self.conjectures)
 
@@ -32,8 +33,6 @@ class SpassWriter(object):
 
 
     def split_capabilities(self, capab):
-        print capab
-
         if capab == "DY":
             return ["E", "B", "S", "I", "C", "O", "F"]
 
@@ -51,7 +50,7 @@ class SpassWriter(object):
         else: #ONE ATTACKER ONLY
             previous = self.generate_one_attacker_first_step() #method for one attacker only in first message
 
-        #self.text = self.remaining_steps(previous) #calls method for remaining steps!
+        self.generate_remaining_steps(previous) #calls method for remaining steps!
 
 
     def generate_one_attacker_first_step(self):
@@ -75,8 +74,99 @@ class SpassWriter(object):
             form += '\t\t{}_{}(sent({},{},{}),{})\n\t),\nstep1).\n\n'.format(self.ceremony.layer[0], cap_set[-1], self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], self.ceremony.att[0][0])
 
         self.text += form
-
         return previous
+
+
+    def generate_several_attackers_first_step(self):
+        form = "formula(\n\tand(\n"
+        previous = "\t\tand(\n"
+
+        for index, att in enumerate(self.ceremony.att[0]):
+
+            if len(self.ceremony.capab[0][index]) == 1:  # only one cap: ' E' , ' S' ...
+                form += '\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[0], self.ceremony.capab[0][index], self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], att)
+                previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[0], self.ceremony.capab[0][index], self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], att)
+
+            else:  # more capabilities than just one (DY or  E + B ...and so on and so forth)
+                cap_set = self.split_capabilities(self.ceremony.capab[0][index])
+
+                for capability in cap_set[:-1]:
+                    form += '\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[0], capability, self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], att)
+                    previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[0], capability, self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], att)
+
+                previous += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t),\n'.format(self.ceremony.layer[0], cap_set[-1], self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], att)
+                form += '\t\t{}_{}(sent({},{},{}),{})\n\t),\nstep1).\n\n'.format(self.ceremony.layer[0], cap_set[-1], self.ceremony.sender[0], self.ceremony.receiver[0], self.ceremony.msg[0], att)
+
+        self.text += form
+        return previous
+
+
+    def generate_remaining_steps(self, previous):
+        remaining_msgs = self.ceremony.msg[1:]
+        index = 1
+
+        for msg in remaining_msgs:
+            form = "formula(\n\timplies(\n" + previous
+
+            if self.ceremony.capab[index][0] == "N": #NO ATTACKER
+                form += '\t\t{}_N(sent({},{},{}))\n\t),\nstep{}).\n\n'.format(self.ceremony.layer[index], self.ceremony.sender[index], self.ceremony.receiver[index], msg, str(index+1))
+                previous = '\t\t{}_N(sent({},{},{})),\n'.format(self.ceremony.layer[index], self.ceremony.sender[index], self.ceremony.receiver[index], msg)
+
+            elif len(self.ceremony.att[index]) == 1: #ONLY ONE ATTACKER
+                if len(self.ceremony.capab[index][0]) == 1: ##ONLY ONE CAPABILITY!
+
+                    form += '\t\t{}_{}(sent({},{},{}),{})\n\t),\nstep{}).\n\n'.format(self.ceremony.layer[index], self.ceremony.capab[index][0], self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], self.ceremony.att[index][0], str(index+1))
+                    previous = '\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], self.ceremony.capab[index][0], self.ceremony.sender[index],self.ceremony.receiver[index], self.ceremony.msg[index], self.ceremony.att[index][0])
+
+                else: # SEVERAL CAPABILITIES
+                    form += "\t\tand(\n"
+                    previous = "\t\tand(\n"
+
+                    cap_set = self.split_capabilities(self.ceremony.capab[index][0])
+
+                    for capab in cap_set[:-1]: #all capabilities of the list but the last one
+                        form += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], capab, self.ceremony.sender[index], self.ceremony.receiver[index], msg, self.ceremony.att[index][0], str(index+1))
+                        previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], capab, self.ceremony.sender[index], self.ceremony.receiver[index], msg, self.ceremony.att[index][0])
+
+                    form += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t)\n\t),\nstep{}).\n\n'.format(self.ceremony.layer[index], cap_set[-1], self.ceremony.sender[index], self.ceremony.receiver[index], msg, self.ceremony.att[index][0], str(index+1))
+                    previous += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t),\n'.format(self.ceremony.layer[index], cap_set[-1], self.ceremony.sender[index], self.ceremony.receiver[index], msg, self.ceremony.att[index][0])
+
+            else: #SEVERAL ATTACKERS
+                info = self.generate_several_attackers_steps(index, form)
+                form = info[0]
+                previous = info[1]
+
+            self.text += form
+            index += 1
+
+
+    def generate_several_attackers_steps(self, index, form):
+        form += "\t\tand(\n"
+        previous = "\t\tand(\n"
+
+        for att_index, att in enumerate(self.ceremony.att[index]):
+            cap_set = self.split_capabilities(self.ceremony.capab[index][att_index])
+
+            if len(cap_set) == 1:
+                form += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], self.ceremony.capab[index][att_index], self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], att,str(index+1))
+                previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], self.ceremony.capab[index][att_index], self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], att)
+
+            else: #more than one capab
+                for cap in cap_set[:-1]:
+                    form += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], cap, self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], att)
+                    previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], cap, self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], att)
+
+                form += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], cap_set[-1], self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], att)
+                previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(self.ceremony.layer[index], cap_set[-1], self.ceremony.sender[index], self.ceremony.receiver[index], self.ceremony.msg[index], att)
+
+
+        form = form[:-2]
+        form += '\n\t\t)\n\t),\nstep{}).\n\n'.format(str(index+1))
+
+        previous = previous[:-2]
+        previous += "\n\t\t),\n"
+
+        return [form, previous]
 
 
     def generate_messages_formulae(self):
@@ -88,7 +178,7 @@ class SpassWriter(object):
             key = self.ceremony.keys[index]
 
             if not key == "":
-                self.generate_key_formulae(index)
+                self.generate_key_formula(index)
                 encrypted = True
 
             if "," in msg:
@@ -154,7 +244,7 @@ class SpassWriter(object):
                             self.conjectures += 'formula(Knows({0},{1}),attacker_{0}_knows_{1}).\n'.format(att,msg)
 
 
-    def generate_key_formulae(self, index):
+    def generate_key_formula(self, index):
         if '({},0),\n'.format(self.ceremony.keys[index]) not in self.init:
             self.init += '({},0),\n'.format(self.ceremony.keys[index])  #adds declaration for key as a variable
 

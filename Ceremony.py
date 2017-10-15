@@ -20,8 +20,8 @@ class Ceremony(object):
         self.sender.append(sender)
         self.layer.append(layer)
         self.capab.append(capab)
+        self.att.append(attackers)
         for att in attackers:
-            self.att.append([att])
             self.atts.add(att)
         self.receiver.append(receiver)
         self.peers.add(receiver)
