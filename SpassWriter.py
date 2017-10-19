@@ -126,9 +126,17 @@ class SpassWriter(object):
                     self._ceremony.att[0][0])
 
             previous += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t),\n'.format(
-                self._ceremony.layer[0], cap_set[-1], self._ceremony.sender[0], self._ceremony.receiver[0], self._ceremony.msg[0], self._ceremony.att[0][0])
+                self._ceremony.layer[0], cap_set[-1],
+                self._ceremony.sender[0],
+                self._ceremony.receiver[0],
+                self._ceremony.msg[0],
+                self._ceremony.att[0][0])
             form += '\t\t{}_{}(sent({},{},{}),{})\n\t),\nstep1).\n\n'.format(
-                self._ceremony.layer[0], cap_set[-1], self._ceremony.sender[0], self._ceremony.receiver[0], self._ceremony.msg[0], self._ceremony.att[0][0])
+                self._ceremony.layer[0], cap_set[-1],
+                self._ceremony.sender[0],
+                self._ceremony.receiver[0],
+                self._ceremony.msg[0],
+                self._ceremony.att[0][0])
 
         self._text += form
         return previous
@@ -183,9 +191,15 @@ class SpassWriter(object):
                         att)
 
                 previous += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t),\n'.format(
-                    self._ceremony.layer[0], cap_set[-1], self._ceremony.sender[0], self._ceremony.receiver[0], self._ceremony.msg[0], att)
+                    self._ceremony.layer[0], cap_set[-1],
+                    self._ceremony.sender[0],
+                    self._ceremony.receiver[0],
+                    self._ceremony.msg[0], att)
                 form += '\t\t{}_{}(sent({},{},{}),{})\n\t),\nstep1).\n\n'.format(
-                    self._ceremony.layer[0], cap_set[-1], self._ceremony.sender[0], self._ceremony.receiver[0], self._ceremony.msg[0], att)
+                    self._ceremony.layer[0], cap_set[-1],
+                    self._ceremony.sender[0],
+                    self._ceremony.receiver[0],
+                    self._ceremony.msg[0], att)
 
         self._text += form
         return previous
@@ -263,9 +277,17 @@ class SpassWriter(object):
                             self._ceremony.att[index][0])
 
                     form += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t)\n\t),\nstep{}).\n\n'.format(
-                        self._ceremony.layer[index], cap_set[-1], self._ceremony.sender[index], self._ceremony.receiver[index], msg, self._ceremony.att[index][0], str(index + 1))
+                        self._ceremony.layer[index], cap_set[-1],
+                        self._ceremony.sender[index],
+                        self._ceremony.receiver[index],
+                        msg,
+                        self._ceremony.att[index][0], str(index + 1))
                     previous += '\t\t\t{}_{}(sent({},{},{}),{})\n\t\t),\n'.format(
-                        self._ceremony.layer[index], cap_set[-1], self._ceremony.sender[index], self._ceremony.receiver[index], msg, self._ceremony.att[index][0])
+                        self._ceremony.layer[index], cap_set[-1],
+                        self._ceremony.sender[index],
+                        self._ceremony.receiver[index],
+                        msg,
+                        self._ceremony.att[index][0])
 
             else:  # SEVERAL ATTACKERS
                 info = self._generate_several_attackers_steps(index, form)
@@ -323,9 +345,19 @@ class SpassWriter(object):
                         att)
 
                 form += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(
-                    self._ceremony.layer[index], cap_set[-1], self._ceremony.sender[index], self._ceremony.receiver[index], self._ceremony.msg[index], att)
+                    self._ceremony.layer[index],
+                    cap_set[-1],
+                    self._ceremony.sender[index],
+                    self._ceremony.receiver[index],
+                    self._ceremony.msg[index],
+                    att)
                 previous += '\t\t\t{}_{}(sent({},{},{}),{}),\n'.format(
-                    self._ceremony.layer[index], cap_set[-1], self._ceremony.sender[index], self._ceremony.receiver[index], self._ceremony.msg[index], att)
+                    self._ceremony.layer[index],
+                    cap_set[-1],
+                    self._ceremony.sender[index],
+                    self._ceremony.receiver[index],
+                    self._ceremony.msg[index],
+                    att)
 
         form = form[:-2]
         form += '\n\t\t)\n\t),\nstep{}).\n\n'.format(str(index + 1))
