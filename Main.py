@@ -26,4 +26,4 @@ for file_name in files:
         # runs SPASS on terminal
         os.system('SPASS -DocProof {0}.dfg > {0}.txt'.format(spass_name))
     else:
-        print "\nHey!!! File " + file_name + " has no extension!\n"
+        print "Hey!!! File " + file_name + " has no extension!"

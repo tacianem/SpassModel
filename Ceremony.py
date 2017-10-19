@@ -17,11 +17,11 @@ class Ceremony(object):
         self.receiver = []  # receivers -in order
         self.msg = []  # messages -in order
 
-   """
-   add_step: Adds the ceremony components corresponding to each step of the ceremony.
-   All parameters are strings, except capabilites and attackers - which can be either strings or arrays of strings.
-   In the latter case, they have to be equal in size.
-   """
+    """
+    add_step: Adds the ceremony components corresponding to each step of the ceremony.
+    All parameters are strings, except capabilites and attackers - which can be either strings or arrays of strings.
+    In the latter case, they have to be equal in size.
+    """
 
     def add_step(
             self,
@@ -59,3 +59,4 @@ class Ceremony(object):
         print "\n\nATT --------------------------------------\n", self.att
         print "\n\nRECEIVER ---------------------------------\n", self.receiver
         print "\n\nMSG --------------------------------------\n", self.msg
+        print "\n\n"

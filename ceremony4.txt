@@ -1270,7 +1270,7 @@ SPASS beiseite: Proof found.
 Problem: ceremony4.dfg 
 SPASS derived 552 clauses, backtracked 0 clauses, performed 0 splits and kept 768 clauses.
 SPASS allocated 53430 KBytes.
-SPASS spent	0:00:00.09 on the problem.
+SPASS spent	0:00:00.10 on the problem.
 		0:00:00.01 for the input.
 		0:00:00.02 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
