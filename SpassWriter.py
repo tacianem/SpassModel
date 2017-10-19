@@ -2,7 +2,8 @@ class SpassWriter(object):
 
     """
     write_spass: Initialises all strings needed further on for the predicates and conjectures.
-    Also calls the methods to generate the formulae and writes the final SPASS file.
+    It also calls methods to generate formulae for the ceremony peers and messages.
+    Finally, it writes the final SPASS file, following the structure of the model received by parameter.
     """
 
     def write_spass(self, model, ceremony, spass_name):
