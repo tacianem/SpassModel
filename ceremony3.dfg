@@ -1119,7 +1119,6 @@ Attackers_are_Agents).
 
 
 
-
 formula(Agent(s),agent_s).
 formula(Honest(s),honest_s).
 formula(Agent(up),agent_up).
@@ -1151,7 +1150,6 @@ formula(Knows(uc,authenticationcode),agent_uc_knows_authenticationcode).
 formula(KnowsEncr(uc,encr(authenticationcode,keys)),agent_uc_knows_encr_authenticationcode_and_keys).
 formula(KnowsEncr(s,encr(usersemailpage,keys)),agent_s_knows_encr_usersemailpage_and_keys).
 formula(Knows(s,usersemailpage),agent_s_knows_usersemailpage).
-
 
 
 formula(

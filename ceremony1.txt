@@ -927,10 +927,10 @@ SPASS derived 2383 clauses, backtracked 0 clauses, performed 0 splits and kept 6
 SPASS allocated 54945 KBytes.
 SPASS spent	0:00:00.18 on the problem.
 		0:00:00.01 for the input.
-		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.01 for the FLOTTER CNF translation.
 		0:00:00.01 for inferences.
 		0:00:00.00 for the backtracking.
-		0:00:00.13 for the reduction.
+		0:00:00.12 for the reduction.
 
 
 Here is a proof with depth 1, length 59 :
